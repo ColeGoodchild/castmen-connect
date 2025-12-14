@@ -59,11 +59,11 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="hidden items-center gap-4 lg:flex">
             <a
-              href="tel:+13155680560"
+              href="tel:+13152177743"
               className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               <Phone className="h-4 w-4" />
-              (315) 568-0560
+              (315) 217-7743
             </a>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
               Request Quote
@@ -95,11 +95,11 @@ const Header = () => {
               ))}
               <div className="mt-4 flex flex-col gap-3">
                 <a
-                  href="tel:+13155680560"
+                  href="tel:+13152177743"
                   className="flex items-center gap-2 text-sm font-medium text-muted-foreground"
                 >
                   <Phone className="h-4 w-4" />
-                  (315) 568-0560
+                  (315) 217-7743
                 </a>
                 <Button className="w-full bg-primary text-primary-foreground">
                   Request Quote
