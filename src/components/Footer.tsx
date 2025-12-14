@@ -94,21 +94,22 @@ const Footer = () => {
           <div>
             <h4 className="mb-4 font-semibold text-foreground">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Seneca Falls, NY</li>
+              <li>61 State St.</li>
+              <li>Seneca Falls, NY 13148</li>
               <li>
                 <a
-                  href="tel:+13155680560"
+                  href="tel:+13152177743"
                   className="transition-colors hover:text-primary"
                 >
-                  (315) 568-0560
+                  (315) 217-7743
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:sales@castmenelectronics.com"
+                  href="mailto:info@castmen.com"
                   className="transition-colors hover:text-primary"
                 >
-                  sales@castmenelectronics.com
+                  info@castmen.com
                 </a>
               </li>
             </ul>
