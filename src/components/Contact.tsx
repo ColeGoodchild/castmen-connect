@@ -45,9 +45,9 @@ const Contact = () => {
                     <div>
                       <div className="font-medium text-foreground">Location</div>
                       <div className="mt-1 text-muted-foreground">
-                        Seneca Falls, NY
+                        61 State St.
                         <br />
-                        United States
+                        Seneca Falls, NY 13148
                       </div>
                     </div>
                   </div>
@@ -59,10 +59,10 @@ const Contact = () => {
                     <div>
                       <div className="font-medium text-foreground">Phone</div>
                       <a
-                        href="tel:+13155680560"
+                        href="tel:+13152177743"
                         className="mt-1 block text-primary transition-colors hover:text-primary/80"
                       >
-                        (315) 568-0560
+                        (315) 217-7743
                       </a>
                     </div>
                   </div>
@@ -74,10 +74,10 @@ const Contact = () => {
                     <div>
                       <div className="font-medium text-foreground">Email</div>
                       <a
-                        href="mailto:sales@castmenelectronics.com"
+                        href="mailto:info@castmen.com"
                         className="mt-1 block text-primary transition-colors hover:text-primary/80"
                       >
-                        sales@castmenelectronics.com
+                        info@castmen.com
                       </a>
                     </div>
                   </div>
