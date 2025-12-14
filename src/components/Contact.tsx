@@ -1,10 +1,10 @@
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Upload, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -28,6 +28,31 @@ const Contact = () => {
     message: "",
   });
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
+  const [file, setFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0];
+    if (selectedFile) {
+      // Max 10MB file size
+      if (selectedFile.size > 10 * 1024 * 1024) {
+        toast({
+          title: "File too large",
+          description: "Please select a file smaller than 10MB.",
+          variant: "destructive",
+        });
+        return;
+      }
+      setFile(selectedFile);
+    }
+  };
+
+  const removeFile = () => {
+    setFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -63,6 +88,10 @@ const Contact = () => {
     });
 
     setFormData({ name: "", company: "", phone: "", email: "", message: "" });
+    setFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
     setIsSubmitting(false);
   };
 
@@ -259,6 +288,47 @@ const Contact = () => {
                     {errors.message && (
                       <p className="text-sm text-destructive">{errors.message}</p>
                     )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="file" className="text-foreground">
+                      Attach File <span className="text-muted-foreground text-sm">(optional, max 10MB)</span>
+                    </Label>
+                    <div className="flex items-center gap-3">
+                      <input
+                        ref={fileInputRef}
+                        id="file"
+                        name="file"
+                        type="file"
+                        onChange={handleFileChange}
+                        className="hidden"
+                        accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.dwg,.dxf,.step,.stp"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => fileInputRef.current?.click()}
+                        className="flex items-center gap-2"
+                      >
+                        <Upload className="h-4 w-4" />
+                        Choose File
+                      </Button>
+                      {file && (
+                        <div className="flex items-center gap-2 rounded-md bg-muted/50 px-3 py-2 text-sm">
+                          <span className="text-foreground truncate max-w-[200px]">{file.name}</span>
+                          <button
+                            type="button"
+                            onClick={removeFile}
+                            className="text-muted-foreground hover:text-destructive transition-colors"
+                          >
+                            <X className="h-4 w-4" />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      Accepted: PDF, Word, Excel, Images, CAD files (DWG, DXF, STEP)
+                    </p>
                   </div>
 
                   <Button
