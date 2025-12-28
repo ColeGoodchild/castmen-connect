@@ -65,7 +65,10 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               (315) 216-7743
             </a>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button 
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Request Quote
             </Button>
           </div>
@@ -101,7 +104,13 @@ const Header = () => {
                   <Phone className="h-4 w-4" />
                   (315) 216-7743
                 </a>
-                <Button className="w-full bg-primary text-primary-foreground">
+                <Button 
+                  className="w-full bg-primary text-primary-foreground"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Request Quote
                 </Button>
               </div>
