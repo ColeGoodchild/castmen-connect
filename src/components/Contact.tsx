@@ -88,10 +88,10 @@ const Contact = () => {
       formDataToSend.append("message", formData.message);
       
       if (file) {
-        formDataToSend.append("attachment", file);
+        formDataToSend.append("file-upload", file);
       }
 
-      const response = await fetch("https://formspree.io/f/xkonzllk", {
+      const response = await fetch("https://usebasin.com/f/5e6f1d78e407", {
         method: "POST",
         body: formDataToSend,
         headers: {
