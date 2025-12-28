@@ -79,19 +79,48 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Quote Request Submitted",
-      description: "Thank you! We'll get back to you within 24 hours.",
-    });
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("company", formData.company || "");
+      formDataToSend.append("phone", formData.phone || "");
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("message", formData.message);
+      
+      if (file) {
+        formDataToSend.append("attachment", file);
+      }
 
-    setFormData({ name: "", company: "", phone: "", email: "", message: "" });
-    setFile(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
+      const response = await fetch("https://formspree.io/f/xkonzllk", {
+        method: "POST",
+        body: formDataToSend,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Quote Request Submitted",
+          description: "Thank you! We'll get back to you within 24 hours.",
+        });
+
+        setFormData({ name: "", company: "", phone: "", email: "", message: "" });
+        setFile(null);
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
     }
+    
     setIsSubmitting(false);
   };
 
