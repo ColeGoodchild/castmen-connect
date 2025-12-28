@@ -51,6 +51,7 @@ const Hero = () => {
                 size="lg"
                 variant="outline"
                 className="border-border bg-transparent text-foreground hover:bg-muted hover:text-foreground"
+                onClick={() => document.getElementById('capabilities')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Capabilities
               </Button>
