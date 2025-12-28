@@ -98,10 +98,10 @@ const Footer = () => {
               <li>Seneca Falls, NY 13148</li>
               <li>
                 <a
-                  href="tel:+13152177743"
+                  href="tel:+13152167743"
                   className="transition-colors hover:text-primary"
                 >
-                  (315) 217-7743
+                  (315) 216-7743
                 </a>
               </li>
               <li>
