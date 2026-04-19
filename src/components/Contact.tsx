@@ -194,21 +194,6 @@ const Contact = () => {
 
                   <div className="flex items-start gap-4">
                     <div className="rounded-lg bg-primary/10 p-3 text-primary">
-                      <Phone className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <div className="font-medium text-foreground">Phone</div>
-                      <a
-                        href="tel:+13152167743"
-                        className="mt-1 block text-primary transition-colors hover:text-primary/80"
-                      >
-                        (315) 216-7743
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-primary/10 p-3 text-primary">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
