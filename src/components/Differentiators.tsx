@@ -3,38 +3,38 @@ import { MapPin, Zap, Users, Award, Clock, CheckCircle } from "lucide-react";
 const differentiators = [
   {
     icon: MapPin,
-    title: "Domestic Manufacturing",
-    description: "U.S.-based production means faster lead times, easier communication, and simplified supply chain management.",
+    title: "U.S.-Based Manufacturing",
+    description: "Faster lead times, stronger communication, and supply chain control.",
     highlight: "Seneca Falls, NY",
   },
   {
     icon: Zap,
-    title: "Expedite Status",
-    description: "New orders receive expedite priority. We understand that time-to-market is critical for your success.",
+    title: "Rapid Response & Expedited Orders",
+    description: "New projects receive priority to meet tight timelines.",
     highlight: "Fast Turnaround",
   },
   {
     icon: Users,
-    title: "Engineer-to-Engineer Support",
-    description: "Direct access to our engineering team for design assistance, troubleshooting, and technical collaboration.",
+    title: "Engineer-to-Engineer Collaboration",
+    description: "Work directly with technical experts to solve complex challenges.",
     highlight: "Direct Access",
   },
   {
     icon: Award,
-    title: "100% IPC-Certified Team",
-    description: "Every team member is IPC certified, ensuring consistent quality across all orders regardless of complexity.",
+    title: "Consistent, Certified Quality",
+    description: "100% IPC-certified team ensuring repeatable, high-quality builds.",
     highlight: "Certified Excellence",
   },
   {
     icon: CheckCircle,
     title: "100% Functional Testing",
-    description: "Every assembly undergoes comprehensive testing to ensure zero defects before shipment.",
+    description: "Every assembly is tested before shipment—no exceptions.",
     highlight: "Zero Defects",
   },
   {
     icon: Clock,
-    title: "Responsive & Flexible",
-    description: "Our strength lies in our responsiveness and flexibility to meet your unique specifications and timelines.",
+    title: "Flexible Production",
+    description: "From low-volume prototypes to high-volume production runs.",
     highlight: "Custom Solutions",
   },
 ];
@@ -57,13 +57,9 @@ const Differentiators = () => {
             Why Choose Castmen
           </div>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            The Castmen
-            <span className="block text-gradient">Advantage</span>
+            A Manufacturing Partner Built for
+            <span className="block text-gradient">Speed, Precision, and Reliability</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            We combine domestic manufacturing agility with aerospace-grade precision 
-            to deliver cable assemblies that exceed expectations.
-          </p>
         </div>
 
         {/* Differentiators Grid */}
