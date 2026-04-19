@@ -123,9 +123,9 @@ const Certifications = () => {
             {/* Quality KPIs */}
             <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/50 to-card/30 p-8 backdrop-blur-sm">
               <h3 className="mb-6 text-xl font-semibold text-foreground">
-                Quality Performance
+                Quality Metrics
               </h3>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-primary">&lt;0.5%</div>
                   <div className="mt-2 text-sm text-muted-foreground">
@@ -142,6 +142,15 @@ const Certifications = () => {
                   </div>
                   <div className="mt-1 text-xs text-primary/70">
                     Reliable every time
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-primary">100%</div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Tested Assemblies
+                  </div>
+                  <div className="mt-1 text-xs text-primary/70">
+                    Verified before shipment
                   </div>
                 </div>
               </div>
