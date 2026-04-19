@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Capabilities from "@/components/Capabilities";
+import EngineeringCapabilities from "@/components/EngineeringCapabilities";
 import Industries from "@/components/Industries";
 import Differentiators from "@/components/Differentiators";
 import Certifications from "@/components/Certifications";
@@ -14,6 +15,7 @@ const Index = () => {
       <main>
         <Hero />
         <Capabilities />
+        <EngineeringCapabilities />
         <Industries />
         <Differentiators />
         <Certifications />
