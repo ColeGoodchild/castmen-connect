@@ -395,14 +395,17 @@ const Contact = () => {
                   </Button>
                 </form>
 
-                <div className="mt-6 rounded-lg bg-muted/30 p-4">
-                  <p className="text-center text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">
-                      Expedite orders available
-                    </span>
-                    <br />
-                    Fast turnaround for urgent requirements
-                  </p>
+                <div className="mt-6 space-y-2 rounded-lg bg-muted/30 p-4">
+                  {[
+                    "Typical response within 24 hours",
+                    "Secure file handling",
+                    "Expedite options available",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-primary" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
