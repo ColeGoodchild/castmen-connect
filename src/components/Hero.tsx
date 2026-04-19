@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Zap, Award } from "lucide-react";
+import { ArrowRight, Shield, Zap, Award, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
