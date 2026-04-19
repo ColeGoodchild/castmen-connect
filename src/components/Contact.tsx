@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, Send, Upload, X } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Upload, X, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -141,13 +141,31 @@ const Contact = () => {
               Get In Touch
             </div>
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              Ready to Start Your
-              <span className="block text-gradient">Project?</span>
+              Start Your Project
+              <span className="block text-gradient">with Confidence</span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Whether you need a prototype or high-volume production, our team is ready 
-              to provide a competitive quote with fast turnaround times.
+              Whether you need a prototype or full production, we'll deliver a fast,
+              competitive quote with the quality your application demands.
             </p>
+
+            <div className="mt-8">
+              <p className="mb-4 text-sm font-medium uppercase tracking-wide text-foreground">
+                What to expect
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+                {[
+                  "Response within 24 hours",
+                  "Engineering review available",
+                  "NDA available upon request",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary" />
+                    <span className="text-sm text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Contact Card */}
