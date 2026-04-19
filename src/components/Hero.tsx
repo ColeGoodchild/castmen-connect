@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Zap, Award } from "lucide-react";
+import { ArrowRight, Shield, Zap, Award, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -27,14 +27,14 @@ const Hero = () => {
 
             {/* Headline */}
             <h1 className="animate-fade-up-delay-1 mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Precision Wire Harness
-              <span className="block text-gradient">Manufacturing</span>
+              Mission-Critical Wire Harnesses Delivered Fast
+              <span className="block text-gradient">Without Compromising Quality</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="animate-fade-up-delay-2 mb-8 max-w-lg text-lg text-muted-foreground">
-              U.S.-based custom cable assembly manufacturer delivering mission-critical 
-              solutions for aerospace, defense, robotics, and advanced technology sectors.
+            <p className="animate-fade-up-delay-2 mb-8 max-w-xl text-lg text-muted-foreground">
+              AS9100D-certified U.S. manufacturer specializing in rapid-turn, high-reliability
+              cable assemblies for aerospace, defense, robotics, and advanced systems.
             </p>
 
             {/* CTAs */}
@@ -51,25 +51,45 @@ const Hero = () => {
                 size="lg"
                 variant="outline"
                 className="border-border bg-transparent text-foreground hover:bg-muted hover:text-foreground"
-                onClick={() => document.getElementById('capabilities')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                View Capabilities
+                Talk to an Engineer
               </Button>
             </div>
 
+            {/* Supporting bullets */}
+            <ul className="animate-fade-up-delay-3 mt-8 space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                Rapid prototypes and expedited production
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                Direct engineer-to-engineer collaboration
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                Build-to-print or full design support
+              </li>
+            </ul>
+
             {/* Trust Indicators */}
-            <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border/50 pt-8">
+            <div className="mt-10 grid grid-cols-2 gap-6 border-t border-border/50 pt-8 sm:grid-cols-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">&lt;0.5%</div>
-                <div className="mt-1 text-sm text-muted-foreground">RMA Rate</div>
+                <div className="text-2xl font-bold text-primary lg:text-3xl">&lt;0.5%</div>
+                <div className="mt-1 text-xs text-muted-foreground sm:text-sm">RMA Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">&gt;98%</div>
-                <div className="mt-1 text-sm text-muted-foreground">On-Time Delivery</div>
+                <div className="text-2xl font-bold text-primary lg:text-3xl">98%</div>
+                <div className="mt-1 text-xs text-muted-foreground sm:text-sm">On-Time Delivery</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">100%</div>
-                <div className="mt-1 text-sm text-muted-foreground">Tested Assemblies</div>
+                <div className="text-2xl font-bold text-primary lg:text-3xl">100%</div>
+                <div className="mt-1 text-xs text-muted-foreground sm:text-sm">Tested Assemblies</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary lg:text-3xl">ITAR</div>
+                <div className="mt-1 text-xs text-muted-foreground sm:text-sm">Compliant</div>
               </div>
             </div>
           </div>
