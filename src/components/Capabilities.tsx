@@ -13,32 +13,32 @@ const capabilities = [
   {
     icon: Cable,
     title: "Custom Wire Harness Assembly",
-    description: "Build-to-print or design assistance, from prototypes to high-volume production runs.",
+    description: "Build-to-print or design assistance, from prototypes to full-scale production.",
   },
   {
     icon: Layers,
     title: "Cable Assemblies & Kits",
-    description: "Complete cable kits, fiber optics, RF coaxial, high voltage, and ribbon cables.",
+    description: "RF coaxial, fiber optic, high-voltage, ribbon cables, and complete cable kits.",
   },
   {
     icon: Shield,
     title: "MIL-SPEC & Aerospace-Grade",
-    description: "Military specification and aerospace-grade cables meeting the strictest requirements.",
+    description: "Built to meet stringent military and aerospace requirements.",
   },
   {
     icon: Zap,
-    title: "Prototype & Quick Turnaround",
-    description: "Rapid prototype builds with expedited status on new orders for faster time-to-market.",
+    title: "Rapid Prototyping & Expedited Orders",
+    description: "Fast turnaround to keep your program on schedule.",
   },
   {
     icon: Radio,
-    title: "EMI/RFI Protection",
-    description: "Shielded and multi-branch harnesses with signal integrity solutions.",
+    title: "EMI/RFI Shielding & Signal Integrity",
+    description: "Engineered solutions for high-performance applications.",
   },
   {
     icon: Cpu,
-    title: "Panel Wiring",
-    description: "Complete panel wiring solutions with comprehensive labeling and heat shrinking.",
+    title: "Panel Wiring & Integration",
+    description: "Complete panel wiring with labeling, routing, and termination.",
   },
   {
     icon: Settings,
@@ -66,12 +66,12 @@ const Capabilities = () => {
             Core Competencies
           </div>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Comprehensive Cable Assembly
+            Complete Wire Harness &amp; Cable Assembly
             <span className="block text-gradient">Solutions</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            From design assistance to high-volume production, we deliver precision-engineered 
-            wire harnesses that meet the most demanding specifications.
+            From prototype to production, we deliver precision-built assemblies that meet
+            the most demanding specifications.
           </p>
         </div>
 
