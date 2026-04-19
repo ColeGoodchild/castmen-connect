@@ -328,7 +328,7 @@ const Contact = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us about your project requirements, quantity needs, and any specifications..."
+                      placeholder="Tell us about your project, upload drawings or specs, and our team will respond quickly."
                       rows={5}
                       className={errors.message ? "border-destructive" : ""}
                     />
