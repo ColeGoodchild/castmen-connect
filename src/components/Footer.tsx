@@ -112,6 +112,14 @@ const Footer = () => {
                   ITAR Cable Assembly Manufacturer
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/as9100-wire-harness-manufacturer"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  AS9100 Wire Harness Manufacturer
+                </Link>
+              </li>
             </ul>
           </div>
 
