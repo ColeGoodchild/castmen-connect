@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CustomWireHarnessUSA from "./pages/CustomWireHarnessUSA";
+import MilSpecCableAssemblies from "./pages/MilSpecCableAssemblies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/custom-wire-harness-manufacturer-usa" element={<CustomWireHarnessUSA />} />
+          <Route path="/mil-spec-cable-assemblies" element={<MilSpecCableAssemblies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

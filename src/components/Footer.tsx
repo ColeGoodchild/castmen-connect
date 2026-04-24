@@ -96,6 +96,14 @@ const Footer = () => {
                   Custom Wire Harness Manufacturer USA
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/mil-spec-cable-assemblies"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  MIL-SPEC Cable Assemblies
+                </Link>
+              </li>
             </ul>
           </div>
 
