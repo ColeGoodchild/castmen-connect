@@ -1,4 +1,5 @@
 import { Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -86,6 +87,14 @@ const Footer = () => {
                 >
                   Contact
                 </a>
+              </li>
+              <li>
+                <Link
+                  to="/custom-wire-harness-manufacturer-usa"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Custom Wire Harness Manufacturer USA
+                </Link>
               </li>
             </ul>
           </div>
