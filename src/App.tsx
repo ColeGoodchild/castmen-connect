@@ -23,6 +23,7 @@ const App = () => (
           <Route path="/custom-wire-harness-manufacturer-usa" element={<CustomWireHarnessUSA />} />
           <Route path="/mil-spec-cable-assemblies" element={<MilSpecCableAssemblies />} />
           <Route path="/itar-cable-assembly-manufacturer" element={<ItarCableAssembly />} />
+          <Route path="/as9100-wire-harness-manufacturer" element={<As9100WireHarness />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
