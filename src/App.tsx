@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import CustomWireHarnessUSA from "./pages/CustomWireHarnessUSA";
 import MilSpecCableAssemblies from "./pages/MilSpecCableAssemblies";
 import ItarCableAssembly from "./pages/ItarCableAssembly";
+import As9100WireHarness from "./pages/As9100WireHarness";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
