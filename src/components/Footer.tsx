@@ -104,6 +104,14 @@ const Footer = () => {
                   MIL-SPEC Cable Assemblies
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/itar-cable-assembly-manufacturer"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  ITAR Cable Assembly Manufacturer
+                </Link>
+              </li>
             </ul>
           </div>
 
