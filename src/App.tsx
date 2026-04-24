@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CustomWireHarnessUSA from "./pages/CustomWireHarnessUSA";
 import MilSpecCableAssemblies from "./pages/MilSpecCableAssemblies";
+import ItarCableAssembly from "./pages/ItarCableAssembly";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
