@@ -128,6 +128,14 @@ const Footer = () => {
                   Rapid Prototype Cable Assembly
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/case-studies"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Case Studies
+                </Link>
+              </li>
             </ul>
           </div>
 
