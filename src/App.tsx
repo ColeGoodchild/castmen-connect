@@ -9,6 +9,7 @@ import MilSpecCableAssemblies from "./pages/MilSpecCableAssemblies";
 import ItarCableAssembly from "./pages/ItarCableAssembly";
 import As9100WireHarness from "./pages/As9100WireHarness";
 import RapidPrototypeCableAssembly from "./pages/RapidPrototypeCableAssembly";
+import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
