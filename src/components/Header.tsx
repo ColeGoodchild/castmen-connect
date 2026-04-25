@@ -105,7 +105,7 @@ const Header = () => {
                   className="w-full bg-primary text-primary-foreground"
                   onClick={() => {
                     setIsMenuOpen(false);
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    goToContact();
                   }}
                 >
                   Request Quote
