@@ -8,6 +8,7 @@ import CustomWireHarnessUSA from "./pages/CustomWireHarnessUSA";
 import MilSpecCableAssemblies from "./pages/MilSpecCableAssemblies";
 import ItarCableAssembly from "./pages/ItarCableAssembly";
 import As9100WireHarness from "./pages/As9100WireHarness";
+import RapidPrototypeCableAssembly from "./pages/RapidPrototypeCableAssembly";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/mil-spec-cable-assemblies" element={<MilSpecCableAssemblies />} />
           <Route path="/itar-cable-assembly-manufacturer" element={<ItarCableAssembly />} />
           <Route path="/as9100-wire-harness-manufacturer" element={<As9100WireHarness />} />
+          <Route path="/rapid-prototype-cable-assembly" element={<RapidPrototypeCableAssembly />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
