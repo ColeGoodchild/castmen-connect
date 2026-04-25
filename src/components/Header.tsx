@@ -29,7 +29,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="relative h-10 w-10 rounded-lg bg-primary/10 p-2">
               <div className="absolute inset-0 rounded-lg bg-primary/20 blur-sm" />
               <svg
@@ -52,7 +52,7 @@ const Header = () => {
                 ELECTRONICS
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 lg:flex">
