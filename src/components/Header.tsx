@@ -72,6 +72,8 @@ const Header = () => {
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={goToContact}
+            >
+              Request Quote
             </Button>
           </div>
 
