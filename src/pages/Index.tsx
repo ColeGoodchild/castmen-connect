@@ -16,11 +16,13 @@ const Index = () => {
   useEffect(() => {
     if (hash) {
       const id = hash.replace("#", "");
-      // Defer to ensure sections are mounted
-      requestAnimationFrame(() => {
+      const scroll = () => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+      };
+      // Wait a tick for sections to mount, then scroll smoothly
+      const t = window.setTimeout(scroll, 50);
+      return () => window.clearTimeout(t);
     }
   }, [hash]);
 
