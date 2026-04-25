@@ -120,6 +120,14 @@ const Footer = () => {
                   AS9100 Wire Harness Manufacturer
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/rapid-prototype-cable-assembly"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Rapid Prototype Cable Assembly
+                </Link>
+              </li>
             </ul>
           </div>
 
