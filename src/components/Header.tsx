@@ -1,9 +1,20 @@
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const goToContact = () => {
+    if (location.pathname === "/") {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/#contact");
+    }
+  };
 
   const navLinks = [
     { href: "#capabilities", label: "Capabilities" },
@@ -60,7 +71,7 @@ const Header = () => {
           <div className="hidden items-center gap-4 lg:flex">
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={goToContact}
             >
               Request Quote
             </Button>
@@ -94,7 +105,7 @@ const Header = () => {
                   className="w-full bg-primary text-primary-foreground"
                   onClick={() => {
                     setIsMenuOpen(false);
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    goToContact();
                   }}
                 >
                   Request Quote
