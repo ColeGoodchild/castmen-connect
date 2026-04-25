@@ -84,6 +84,12 @@ const Header = () => {
                 </Link>
               )
             )}
+            <Link
+              to="/case-studies"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              Case Studies
+            </Link>
           </nav>
 
           {/* CTA Buttons */}
@@ -140,6 +146,13 @@ const Header = () => {
                   </Link>
                 )
               )}
+              <Link
+                to="/case-studies"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                Case Studies
+              </Link>
               <div className="mt-4 flex flex-col gap-3">
                 <Button 
                   className="w-full bg-primary text-primary-foreground"
