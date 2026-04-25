@@ -84,6 +84,12 @@ const Header = () => {
                 </Link>
               )
             )}
+            <Link
+              to="/case-studies"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              Case Studies
+            </Link>
           </nav>
 
           {/* CTA Buttons */}
