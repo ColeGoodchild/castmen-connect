@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Menu, X, Phone, Mail } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, Phone, Mail, Home } from "lucide-react";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -29,7 +29,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="relative h-10 w-10 rounded-lg bg-primary/10 p-2">
               <div className="absolute inset-0 rounded-lg bg-primary/20 blur-sm" />
               <svg
@@ -52,14 +52,23 @@ const Header = () => {
                 ELECTRONICS
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 lg:flex">
+            {location.pathname !== "/" && (
+              <Link
+                to="/"
+                className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                <Home className="h-4 w-4" />
+                Home
+              </Link>
+            )}
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={location.pathname === "/" ? link.href : `/${link.href}`}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
@@ -90,10 +99,20 @@ const Header = () => {
         {isMenuOpen && (
           <div className="border-t border-border/50 py-4 lg:hidden">
             <nav className="flex flex-col gap-4">
+              {location.pathname !== "/" && (
+                <Link
+                  to="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <Home className="h-4 w-4" />
+                  Home
+                </Link>
+              )}
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={location.pathname === "/" ? link.href : `/${link.href}`}
                   onClick={() => setIsMenuOpen(false)}
                   className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
                 >
