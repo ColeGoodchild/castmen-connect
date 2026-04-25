@@ -99,10 +99,20 @@ const Header = () => {
         {isMenuOpen && (
           <div className="border-t border-border/50 py-4 lg:hidden">
             <nav className="flex flex-col gap-4">
+              {location.pathname !== "/" && (
+                <Link
+                  to="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <Home className="h-4 w-4" />
+                  Home
+                </Link>
+              )}
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={location.pathname === "/" ? link.href : `/${link.href}`}
                   onClick={() => setIsMenuOpen(false)}
                   className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
                 >
