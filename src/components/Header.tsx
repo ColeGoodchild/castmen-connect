@@ -56,10 +56,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 lg:flex">
+            {location.pathname !== "/" && (
+              <Link
+                to="/"
+                className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                <Home className="h-4 w-4" />
+                Home
+              </Link>
+            )}
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={location.pathname === "/" ? link.href : `/${link.href}`}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
