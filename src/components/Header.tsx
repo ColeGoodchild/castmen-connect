@@ -119,16 +119,27 @@ const Header = () => {
                   Home
                 </Link>
               )}
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={location.pathname === "/" ? link.href : `/${link.href}`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                location.pathname === "/" ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={`/${link.href}`}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <div className="mt-4 flex flex-col gap-3">
                 <Button 
                   className="w-full bg-primary text-primary-foreground"
