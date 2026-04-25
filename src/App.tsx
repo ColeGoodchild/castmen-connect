@@ -27,6 +27,7 @@ const App = () => (
           <Route path="/itar-cable-assembly-manufacturer" element={<ItarCableAssembly />} />
           <Route path="/as9100-wire-harness-manufacturer" element={<As9100WireHarness />} />
           <Route path="/rapid-prototype-cable-assembly" element={<RapidPrototypeCableAssembly />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
