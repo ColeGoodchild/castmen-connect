@@ -71,9 +71,7 @@ const Header = () => {
           <div className="hidden items-center gap-4 lg:flex">
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Request Quote
+              onClick={goToContact}
             </Button>
           </div>
 
