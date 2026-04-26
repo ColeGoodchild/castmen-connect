@@ -18,6 +18,39 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const faqs = [
+  {
+    q: "What are your typical lead times for cable assemblies and wire harnesses?",
+    a: "Standard production lead times generally range from 2 to 6 weeks depending on complexity, component availability, and volume. Rapid prototypes can be delivered in as little as 5–10 business days, and expedited production is available for mission-critical programs. We provide a confirmed schedule with every quote.",
+  },
+  {
+    q: "Do you support AS9100 aerospace and ITAR-regulated defense projects?",
+    a: "Yes. Castmen Electronics operates under an AS9100D-aligned quality management system and is ITAR-registered for controlled defense work. We routinely build flight-critical aerospace harnesses and mil-spec cable assemblies with full traceability, controlled documentation, and U.S.-based manufacturing.",
+  },
+  {
+    q: "What testing and quality processes do you perform on every assembly?",
+    a: "Every assembly is built to IPC/WHMA-A-620 workmanship standards and undergoes 100% continuity, hi-pot, and visual inspection as required. We also offer functional testing, label verification, and sample-based pull testing. Full inspection records and certifications of conformance are provided with each shipment.",
+  },
+  {
+    q: "Can you scale from prototype to full production?",
+    a: "Absolutely. Many of our customers start with a prototype build and ramp into recurring production with us. We standardize processes, lock in approved component sources, and align capacity to your forecast so the transition is seamless and repeatable.",
+  },
+  {
+    q: "What industries and applications do you typically support?",
+    a: "We serve aerospace, defense, robotics and automation, medical, and industrial OEMs. Typical applications include avionics, UAV systems, ground support equipment, robotic actuators, mil-spec interconnects, and complex multi-branch wire harnesses.",
+  },
+  {
+    q: "How do I request a quote and what information should I include?",
+    a: "Send us your drawings, BOM, wire list, or even a sketch — along with target quantities and required delivery date. Our engineering team reviews every RFQ for manufacturability and typically responds within 24 hours.",
+  },
+];
 
 const PAGE_TITLE =
   "Cable Assembly Case Studies | Aerospace & Robotics Wire Harness Projects | Castmen Electronics";
@@ -209,9 +242,24 @@ const CaseStudies = () => {
     });
     document.head.appendChild(script);
 
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "case-studies-faq-jsonld";
+    faqScript.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    });
+    document.head.appendChild(faqScript);
+
     return () => {
       document.title = prevTitle;
       document.getElementById("case-studies-jsonld")?.remove();
+      document.getElementById("case-studies-faq-jsonld")?.remove();
     };
   }, []);
 
@@ -420,6 +468,49 @@ const CaseStudies = () => {
             </div>
           </section>
         ))}
+
+        {/* FAQ */}
+        <section id="faq" className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-3xl">
+              <div className="mb-10 text-center">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium tracking-wider text-primary">
+                  FREQUENTLY ASKED QUESTIONS
+                </div>
+                <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                  Cable Assembly &amp; Wire Harness FAQs
+                </h2>
+                <p className="text-muted-foreground">
+                  Quick answers on lead times, AS9100 and ITAR compliance, and our testing
+                  process. Don't see your question? Talk to an engineer.
+                </p>
+              </div>
+
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((f, i) => (
+                  <AccordionItem
+                    key={f.q}
+                    value={`faq-${i}`}
+                    className="border-border/50"
+                  >
+                    <AccordionTrigger className="text-left text-base font-medium text-foreground hover:no-underline">
+                      {f.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {f.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              <div className="mt-10 text-center">
+                <Button size="lg" asChild>
+                  <Link to="/#contact">Talk to an Engineer</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* WHY CUSTOMERS CHOOSE CASTMEN */}
         <section className="border-y border-border/50 bg-card/30 py-20">
