@@ -469,6 +469,49 @@ const CaseStudies = () => {
           </section>
         ))}
 
+        {/* FAQ */}
+        <section id="faq" className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-3xl">
+              <div className="mb-10 text-center">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium tracking-wider text-primary">
+                  FREQUENTLY ASKED QUESTIONS
+                </div>
+                <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                  Cable Assembly &amp; Wire Harness FAQs
+                </h2>
+                <p className="text-muted-foreground">
+                  Quick answers on lead times, AS9100 and ITAR compliance, and our testing
+                  process. Don't see your question? Talk to an engineer.
+                </p>
+              </div>
+
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((f, i) => (
+                  <AccordionItem
+                    key={f.q}
+                    value={`faq-${i}`}
+                    className="border-border/50"
+                  >
+                    <AccordionTrigger className="text-left text-base font-medium text-foreground hover:no-underline">
+                      {f.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {f.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              <div className="mt-10 text-center">
+                <Button size="lg" asChild>
+                  <Link to="/#contact">Talk to an Engineer</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* WHY CUSTOMERS CHOOSE CASTMEN */}
         <section className="border-y border-border/50 bg-card/30 py-20">
           <div className="container mx-auto px-4">
