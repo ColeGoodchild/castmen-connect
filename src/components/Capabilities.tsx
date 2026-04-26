@@ -10,11 +10,17 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const capabilities = [
+const capabilities: {
+  icon: typeof Cable;
+  title: string;
+  description: string;
+  link?: string;
+}[] = [
   {
     icon: Cable,
     title: "Custom Wire Harness Assembly",
     description: "Build-to-print or design assistance, from prototypes to full-scale production.",
+    link: "/custom-wire-harness-manufacturer-usa",
   },
   {
     icon: Layers,
@@ -25,11 +31,13 @@ const capabilities = [
     icon: Shield,
     title: "MIL-SPEC & Aerospace-Grade",
     description: "Built to meet stringent military and aerospace requirements.",
+    link: "/mil-spec-cable-assemblies",
   },
   {
     icon: Zap,
     title: "Rapid Prototyping & Expedited Orders",
     description: "Fast turnaround to keep your program on schedule.",
+    link: "/rapid-prototype-cable-assembly",
   },
   {
     icon: Radio,
