@@ -1,13 +1,14 @@
-import { 
-  Plane, 
-  Shield, 
-  Bot, 
-  Server, 
-  Sun, 
-  Factory, 
-  Heart, 
-  Rocket 
+import {
+  Plane,
+  Shield,
+  Bot,
+  Server,
+  Sun,
+  Factory,
+  Heart,
+  Rocket,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const industries = [
   {
