@@ -242,9 +242,24 @@ const CaseStudies = () => {
     });
     document.head.appendChild(script);
 
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "case-studies-faq-jsonld";
+    faqScript.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    });
+    document.head.appendChild(faqScript);
+
     return () => {
       document.title = prevTitle;
       document.getElementById("case-studies-jsonld")?.remove();
+      document.getElementById("case-studies-faq-jsonld")?.remove();
     };
   }, []);
 
