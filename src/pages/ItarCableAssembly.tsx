@@ -21,6 +21,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import RelatedResources from "@/components/RelatedResources";
 
 const PAGE_TITLE = "ITAR Cable Assembly Manufacturer | ITAR Registered Wire Harness | Castmen Electronics";
 const PAGE_DESCRIPTION =
@@ -486,6 +487,8 @@ const ItarCableAssembly = () => {
             </div>
           </div>
         </section>
+
+        <RelatedResources currentPath="/itar-cable-assembly-manufacturer" />
       </main>
       <Footer />
     </div>

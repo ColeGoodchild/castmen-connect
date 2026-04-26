@@ -18,6 +18,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import RelatedResources from "@/components/RelatedResources";
 
 const PAGE_TITLE =
   "Rapid Prototype Cable Assembly | Fast Turn Wire Harness Manufacturing | Castmen Electronics";
@@ -415,6 +416,8 @@ const RapidPrototypeCableAssembly = () => {
             </div>
           </div>
         </section>
+
+        <RelatedResources currentPath="/rapid-prototype-cable-assembly" />
       </main>
       <Footer />
     </div>

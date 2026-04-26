@@ -19,6 +19,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import RelatedResources from "@/components/RelatedResources";
 
 const PAGE_TITLE = "Custom Wire Harness Manufacturer USA | AS9100 & ITAR | Castmen Electronics";
 const PAGE_DESCRIPTION =
@@ -447,6 +448,8 @@ const CustomWireHarnessUSA = () => {
             </div>
           </div>
         </section>
+
+        <RelatedResources currentPath="/custom-wire-harness-manufacturer-usa" />
       </main>
       <Footer />
     </div>
