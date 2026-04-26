@@ -24,6 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import RelatedResources from "@/components/RelatedResources";
 
 const faqs = [
   {
