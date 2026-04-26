@@ -563,6 +563,12 @@ const CaseStudies = () => {
             </div>
           </div>
         </section>
+
+        <RelatedResources
+          currentPath="/case-studies"
+          heading="Explore Related Capabilities"
+          subheading="Dive deeper into the manufacturing services behind these case studies."
+        />
       </main>
       <Footer />
     </div>
