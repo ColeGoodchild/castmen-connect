@@ -11,6 +11,7 @@ import As9100WireHarness from "./pages/As9100WireHarness";
 import RapidPrototypeCableAssembly from "./pages/RapidPrototypeCableAssembly";
 import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/custom-wire-harness-manufacturer-usa" element={<CustomWireHarnessUSA />} />
