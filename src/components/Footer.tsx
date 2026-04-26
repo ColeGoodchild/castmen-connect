@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
   return (
     <footer className="border-t border-border/50 bg-card/30">
