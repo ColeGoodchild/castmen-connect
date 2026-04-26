@@ -1,13 +1,14 @@
-import { 
-  Cable, 
-  Cpu, 
-  Layers, 
-  Shield, 
-  Zap, 
-  Radio, 
-  Settings, 
-  CheckCircle2 
+import {
+  Cable,
+  Cpu,
+  Layers,
+  Shield,
+  Zap,
+  Radio,
+  Settings,
+  CheckCircle2,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const capabilities = [
   {
