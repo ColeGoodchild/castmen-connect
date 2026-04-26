@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const industries = [
+const industries: { icon: typeof Plane; name: string; description: React.ReactNode }[] = [
   {
     icon: Plane,
     name: "Aerospace",
@@ -19,7 +19,14 @@ const industries = [
   {
     icon: Shield,
     name: "Defense",
-    description: "MIL-SPEC solutions for military applications and defense contractors.",
+    description: (
+      <>
+        <Link to="/mil-spec-cable-assemblies" className="text-primary hover:underline">
+          MIL-SPEC
+        </Link>{" "}
+        solutions for military applications and defense contractors.
+      </>
+    ),
   },
   {
     icon: Bot,
