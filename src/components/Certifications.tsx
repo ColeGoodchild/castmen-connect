@@ -95,7 +95,13 @@ const Certifications = () => {
                     </span>
                   </div>
                   <h3 className="mb-1 font-semibold text-foreground">
-                    {cert.name}
+                    {cert.link ? (
+                      <Link to={cert.link} className="hover:text-primary">
+                        {cert.name}
+                      </Link>
+                    ) : (
+                      cert.name
+                    )}
                   </h3>
                   <p className="text-sm text-muted-foreground">
                     {cert.description}
