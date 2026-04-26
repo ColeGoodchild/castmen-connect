@@ -92,6 +92,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/custom-wire-harness-manufacturer-usa"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Custom Wire Harness Manufacturer USA
@@ -100,6 +101,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/mil-spec-cable-assemblies"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   MIL-SPEC Cable Assemblies
@@ -108,6 +110,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/itar-cable-assembly-manufacturer"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   ITAR Cable Assembly Manufacturer
@@ -116,6 +119,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/as9100-wire-harness-manufacturer"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   AS9100 Wire Harness Manufacturer
@@ -124,6 +128,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/rapid-prototype-cable-assembly"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Rapid Prototype Cable Assembly
@@ -132,6 +137,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/case-studies"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Case Studies
