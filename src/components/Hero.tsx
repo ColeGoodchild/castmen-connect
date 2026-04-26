@@ -34,8 +34,10 @@ const Hero = () => {
 
             {/* Subheadline */}
             <p className="animate-fade-up-delay-2 mb-8 max-w-xl text-lg text-muted-foreground">
-              AS9100D-certified U.S. manufacturer specializing in rapid-turn, high-reliability
-              cable assemblies for aerospace, defense, robotics, and advanced systems.
+              <Link to="/as9100-wire-harness-manufacturer" className="text-primary underline-offset-4 hover:underline">AS9100D-certified</Link>{" "}
+              U.S. manufacturer specializing in{" "}
+              <Link to="/rapid-prototype-cable-assembly" className="text-primary underline-offset-4 hover:underline">rapid-turn</Link>,
+              high-reliability cable assemblies for aerospace, defense, robotics, and advanced systems.
             </p>
 
             {/* CTAs */}
