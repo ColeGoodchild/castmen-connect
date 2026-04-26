@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
   return (
     <footer className="border-t border-border/50 bg-card/30">
@@ -91,6 +92,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/custom-wire-harness-manufacturer-usa"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Custom Wire Harness Manufacturer USA
@@ -99,6 +101,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/mil-spec-cable-assemblies"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   MIL-SPEC Cable Assemblies
@@ -107,6 +110,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/itar-cable-assembly-manufacturer"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   ITAR Cable Assembly Manufacturer
@@ -115,6 +119,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/as9100-wire-harness-manufacturer"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   AS9100 Wire Harness Manufacturer
@@ -123,6 +128,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/rapid-prototype-cable-assembly"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Rapid Prototype Cable Assembly
@@ -131,6 +137,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/case-studies"
+                  onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Case Studies
