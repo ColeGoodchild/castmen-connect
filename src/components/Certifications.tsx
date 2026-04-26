@@ -1,18 +1,26 @@
 import { Shield, FileCheck, Award, Leaf, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const certifications = [
+const certifications: {
+  icon: typeof Shield;
+  name: string;
+  description: string;
+  type: string;
+  link?: string;
+}[] = [
   {
     icon: Shield,
     name: "AS9100D / ISO 9001:2015",
     description: "Aerospace quality management system certified",
     type: "Quality System",
+    link: "/as9100-wire-harness-manufacturer",
   },
   {
     icon: Lock,
     name: "ITAR Compliant",
     description: "DDTC registered for defense articles",
     type: "Compliance",
+    link: "/itar-cable-assembly-manufacturer",
   },
   {
     icon: FileCheck,
