@@ -138,7 +138,9 @@ const Hero = () => {
                     Precision Engineering
                   </div>
                   <div className="mt-2 text-sm text-muted-foreground">
-                    ITAR Compliant · MIL-SPEC
+                    <Link to="/itar-cable-assembly-manufacturer" className="hover:text-primary">ITAR Compliant</Link>
+                    {" · "}
+                    <Link to="/mil-spec-cable-assemblies" className="hover:text-primary">MIL-SPEC</Link>
                   </div>
                 </div>
               </div>
