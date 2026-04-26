@@ -1,15 +1,16 @@
-import { 
-  Plane, 
-  Shield, 
-  Bot, 
-  Server, 
-  Sun, 
-  Factory, 
-  Heart, 
-  Rocket 
+import {
+  Plane,
+  Shield,
+  Bot,
+  Server,
+  Sun,
+  Factory,
+  Heart,
+  Rocket,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const industries = [
+const industries: { icon: typeof Plane; name: string; description: React.ReactNode }[] = [
   {
     icon: Plane,
     name: "Aerospace",
@@ -18,7 +19,14 @@ const industries = [
   {
     icon: Shield,
     name: "Defense",
-    description: "MIL-SPEC solutions for military applications and defense contractors.",
+    description: (
+      <>
+        <Link to="/mil-spec-cable-assemblies" className="text-primary hover:underline">
+          MIL-SPEC
+        </Link>{" "}
+        solutions for military applications and defense contractors.
+      </>
+    ),
   },
   {
     icon: Bot,
@@ -110,7 +118,11 @@ const Industries = () => {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <p className="mb-6 text-lg text-muted-foreground">
-            Don't see your industry? We work with OEMs and manufacturers across all sectors.
+            Don't see your industry? We work with OEMs and manufacturers across all sectors.{" "}
+            <Link to="/case-studies" className="text-primary hover:underline">
+              See our case studies
+            </Link>{" "}
+            for real-world examples.
           </p>
           <a
             href="#contact"
