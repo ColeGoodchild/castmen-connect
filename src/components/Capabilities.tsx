@@ -101,11 +101,25 @@ const Capabilities = () => {
 
               {/* Content */}
               <h3 className="relative mb-2 text-lg font-semibold text-foreground">
-                {capability.title}
+                {capability.link ? (
+                  <Link to={capability.link} className="hover:text-primary">
+                    {capability.title}
+                  </Link>
+                ) : (
+                  capability.title
+                )}
               </h3>
               <p className="relative text-sm text-muted-foreground">
                 {capability.description}
               </p>
+              {capability.link && (
+                <Link
+                  to={capability.link}
+                  className="relative mt-3 inline-block text-xs font-medium text-primary hover:underline"
+                >
+                  Learn more →
+                </Link>
+              )}
             </div>
           ))}
         </div>
