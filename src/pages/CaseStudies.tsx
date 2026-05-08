@@ -115,7 +115,7 @@ const caseStudies: CaseStudy[] = [
       "Strict adherence to IPC/WHMA-A-620 and AS9100 quality standards",
     ],
     solutionOutro:
-      "Direct engineer-to-engineer communication allowed for fast resolution of design questions and revisions.",
+      "Direct engineer-to-engineer communication allowed for fast resolution of drawing review questions and print revisions.",
     results: [
       { stat: "10 days", label: "Prototype delivery" },
       { stat: "0", label: "Defects in validation" },

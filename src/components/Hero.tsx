@@ -72,7 +72,7 @@ const Hero = () => {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                Build-to-print or full design support
+                Build-to-print with full manufacturability review
               </li>
             </ul>
 

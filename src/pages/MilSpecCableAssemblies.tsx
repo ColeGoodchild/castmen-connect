@@ -57,7 +57,7 @@ const capabilities = [
   {
     icon: Thermometer,
     title: "Environmental Durability",
-    desc: "Designed for harsh operating conditions.",
+    desc: "Built for harsh operating conditions.",
   },
   {
     icon: Rocket,
@@ -73,7 +73,7 @@ const capabilities = [
 
 const engineeringPoints = [
   "Build-to-print manufacturing",
-  "Design-for-manufacturing support",
+  "Manufacturability review (DFM) support",
   "Material and component selection",
   "Revision and configuration control",
 ];
@@ -225,7 +225,7 @@ const MilSpecCableAssemblies = () => {
             </p>
             <p className="text-lg text-muted-foreground">
               Castmen Electronics builds military-grade wire harnesses and cable assemblies
-              designed to meet rigorous performance, durability, and environmental requirements.
+              built to print to meet rigorous performance, durability, and environmental requirements.
               We support defense, aerospace, and advanced systems operating in demanding
               conditions.
             </p>

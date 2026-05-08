@@ -49,7 +49,7 @@ const capabilities = [
   {
     icon: Cable,
     title: "Custom Wire Harness Assembly",
-    desc: "Build-to-print or design assistance for simple to highly complex harnesses.",
+    desc: "Build-to-print with drawing review and manufacturability feedback for simple to highly complex harnesses.",
   },
   {
     icon: Radio,
@@ -79,7 +79,7 @@ const capabilities = [
 ];
 
 const engineeringPoints = [
-  "Build-to-print and design-for-manufacturing (DFM) support",
+  "Build-to-print and manufacturability review (DFM) support",
   "Complex, multi-branch harness expertise",
   "Component sourcing (UL, CSA, RoHS compliant)",
   "Documentation and revision control",
@@ -257,7 +257,7 @@ const As9100WireHarness = () => {
             </p>
             <p className="text-lg text-muted-foreground">
               From prototype to full production, we deliver precision-built wire harnesses
-              designed for mission-critical environments.
+              built to print for mission-critical environments.
             </p>
           </div>
         </section>
