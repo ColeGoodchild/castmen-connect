@@ -19,7 +19,7 @@ const capabilities: {
   {
     icon: Cable,
     title: "Custom Wire Harness Assembly",
-    description: "Build-to-print or design assistance, from prototypes to full-scale production.",
+    description: "Build-to-print with manufacturability review, from prototypes to full-scale production.",
     link: "/custom-wire-harness-manufacturer-usa",
   },
   {

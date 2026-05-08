@@ -1,7 +1,7 @@
 import { CheckCircle2, Wrench } from "lucide-react";
 
 const items = [
-  "Build-to-print & design assistance",
+  "Build-to-print & manufacturability review",
   "Support for complex, multi-branch harnesses",
   "Component sourcing (UL/CSA, RoHS compliant)",
   "IPC/WHMA-A-620 & J-STD-001 standards",

@@ -62,8 +62,8 @@ const capabilities = [
   },
   {
     icon: Wrench,
-    title: "Design Support",
-    desc: "Assistance with manufacturability and optimization.",
+    title: "Drawing & Manufacturability Review",
+    desc: "Print review with manufacturability and optimization feedback.",
   },
   {
     icon: Rocket,
@@ -73,9 +73,9 @@ const capabilities = [
 ];
 
 const engineeringPoints = [
-  "Immediate feedback on designs",
+  "Immediate feedback on drawings and prints",
   "Rapid response to revisions",
-  "Design-for-manufacturing input",
+  "Manufacturability review input",
   "Direct engineer-to-engineer collaboration",
 ];
 
@@ -97,7 +97,7 @@ const useCases = [
 const proofPoints = [
   "Recover delayed development timelines",
   "Accelerate product launches",
-  "Quickly validate new designs",
+  "Quickly validate new builds",
   "Transition seamlessly into production",
 ];
 
@@ -113,7 +113,7 @@ const faqs = [
     a: "Lead times vary, but expedited builds are available depending on complexity.",
   },
   {
-    q: "Do you support design changes during prototyping?",
+    q: "Do you support print revisions and build changes during prototyping?",
     a: "Yes, we work closely with your team to adapt quickly.",
   },
   {
@@ -205,7 +205,7 @@ const RapidPrototypeCableAssembly = () => {
             </p>
             <p className="text-lg text-muted-foreground">
               Castmen Electronics specializes in rapid prototype cable assembly, helping engineers
-              and OEMs move quickly from design to validation. We prioritize speed without
+              and OEMs move quickly from print to validation. We prioritize speed without
               compromising the quality and reliability required for mission-critical systems.
             </p>
           </div>

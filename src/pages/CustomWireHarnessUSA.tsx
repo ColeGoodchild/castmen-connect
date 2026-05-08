@@ -64,7 +64,7 @@ const capabilities = [
 ];
 
 const engineeringPoints = [
-  "Design-for-manufacturing (DFM) support",
+  "Manufacturability review (DFM) support",
   "Material and component selection",
   "Connector and routing optimization",
   "Revision and configuration control",
@@ -126,8 +126,8 @@ const expectations = [
 
 const faqs = [
   {
-    q: "Do you support fully custom designs?",
-    a: "Yes, we build to your exact specifications or assist with design.",
+    q: "Do you support fully custom build-to-print projects?",
+    a: "Yes, we build to your exact print and drawings, and provide manufacturability review feedback when helpful.",
   },
   {
     q: "What volumes do you handle?",

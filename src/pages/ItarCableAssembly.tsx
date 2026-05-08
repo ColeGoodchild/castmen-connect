@@ -81,7 +81,7 @@ const securityPoints = [
 ];
 
 const engineeringPoints = [
-  "Design-for-manufacturing support",
+  "Manufacturability review (DFM) support",
   "Complex harness expertise",
   "Component sourcing and compliance",
   "Rapid response to engineering changes",
