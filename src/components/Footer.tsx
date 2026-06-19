@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react";
+import { Shield, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
