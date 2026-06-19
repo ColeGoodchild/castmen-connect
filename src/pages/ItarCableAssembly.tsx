@@ -74,6 +74,7 @@ const capabilities = [
 
 const securityPoints = [
   "ITAR registration (DDTC)",
+  "DLA JCP certified — cleared for export-controlled unclassified military technical data",
   "Controlled access to technical data",
   "U.S.-based production and workforce",
   "Secure documentation and revision control",
