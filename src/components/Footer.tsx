@@ -185,6 +185,8 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <span>ITAR Compliant</span>
             <span className="text-border">•</span>
+            <span>JCP Certified</span>
+            <span className="text-border">•</span>
             <span>Made in USA</span>
           </div>
         </div>
