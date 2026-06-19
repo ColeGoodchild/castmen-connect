@@ -1,4 +1,4 @@
-import { Shield, FileCheck, Award, Leaf, Lock } from "lucide-react";
+import { Shield, FileCheck, Award, Leaf, Lock, ShieldCheck, FileBadge, Globe2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const certifications: {
@@ -21,6 +21,12 @@ const certifications: {
     description: "DDTC registered for defense articles",
     type: "Compliance",
     link: "/itar-cable-assembly-manufacturer",
+  },
+  {
+    icon: ShieldCheck,
+    name: "JCP Certified (DD Form 2345)",
+    description: "DLA Joint Certification Program — cleared for export-controlled unclassified military technical data",
+    type: "Defense Access",
   },
   {
     icon: FileCheck,
