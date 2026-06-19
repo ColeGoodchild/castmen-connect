@@ -35,9 +35,11 @@ const Hero = () => {
             {/* Subheadline */}
             <p className="animate-fade-up-delay-2 mb-8 max-w-xl text-lg text-muted-foreground">
               <Link to="/as9100-wire-harness-manufacturer" className="text-primary underline-offset-4 hover:underline">AS9100D-certified</Link>{" "}
-              U.S. manufacturer specializing in{" "}
+              and{" "}
+              <Link to="/#jcp-certification" className="text-primary underline-offset-4 hover:underline">JCP-certified</Link>{" "}
+              U.S. wire harness and cable assembly manufacturer — trusted with export-controlled defense technical data and specializing in{" "}
               <Link to="/rapid-prototype-cable-assembly" className="text-primary underline-offset-4 hover:underline">rapid-turn</Link>,
-              high-reliability cable assemblies for aerospace, defense, robotics, and advanced systems.
+              high-reliability assemblies for aerospace, defense, robotics, and advanced systems.
             </p>
 
             {/* CTAs */}
