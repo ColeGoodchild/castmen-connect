@@ -20,10 +20,19 @@ const Hero = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
-            {/* Badge */}
-            <div className="animate-fade-up mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-              <Shield className="h-4 w-4" />
-              AS9100D / ISO 9001:2015 Certified
+            {/* Badges */}
+            <div className="animate-fade-up mb-6 flex flex-wrap gap-2">
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                <Shield className="h-4 w-4" />
+                AS9100D / ISO 9001:2015 Certified
+              </div>
+              <Link
+                to="/#jcp-certification"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+              >
+                <Shield className="h-4 w-4" />
+                JCP Certified
+              </Link>
             </div>
 
             {/* Headline */}
