@@ -81,8 +81,8 @@ const Certifications = () => {
                 <span className="block text-gradient">Excellence</span>
               </h2>
               <p className="text-muted-foreground">
-                Our certifications reflect our commitment to the highest standards 
-                in quality, safety, and environmental responsibility.
+                As a JCP-certified wire harness and cable assembly manufacturer, our credentials reflect our commitment
+                to the highest standards in quality, safety, environmental responsibility, and defense supply-chain compliance.
               </p>
             </div>
 
