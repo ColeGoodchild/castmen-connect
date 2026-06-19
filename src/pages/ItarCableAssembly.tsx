@@ -74,6 +74,7 @@ const capabilities = [
 
 const securityPoints = [
   "ITAR registration (DDTC)",
+  "DLA JCP certified — cleared for export-controlled unclassified military technical data",
   "Controlled access to technical data",
   "U.S.-based production and workforce",
   "Secure documentation and revision control",
@@ -89,6 +90,7 @@ const engineeringPoints = [
 
 const qualityStandards = [
   "AS9100D / ISO 9001:2015 certified",
+  "DLA JCP certified (DD Form 2345) for export-controlled defense technical data",
   "IPC/WHMA-A-620 workmanship standards",
   "IPC J-STD-001 soldering standards",
   "100% functional testing",

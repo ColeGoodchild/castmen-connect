@@ -20,10 +20,19 @@ const Hero = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
-            {/* Badge */}
-            <div className="animate-fade-up mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-              <Shield className="h-4 w-4" />
-              AS9100D / ISO 9001:2015 Certified
+            {/* Badges */}
+            <div className="animate-fade-up mb-6 flex flex-wrap gap-2">
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                <Shield className="h-4 w-4" />
+                AS9100D / ISO 9001:2015 Certified
+              </div>
+              <Link
+                to="/#jcp-certification"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+              >
+                <Shield className="h-4 w-4" />
+                JCP Certified
+              </Link>
             </div>
 
             {/* Headline */}
@@ -35,9 +44,11 @@ const Hero = () => {
             {/* Subheadline */}
             <p className="animate-fade-up-delay-2 mb-8 max-w-xl text-lg text-muted-foreground">
               <Link to="/as9100-wire-harness-manufacturer" className="text-primary underline-offset-4 hover:underline">AS9100D-certified</Link>{" "}
-              U.S. manufacturer specializing in{" "}
+              and{" "}
+              <Link to="/#jcp-certification" className="text-primary underline-offset-4 hover:underline">JCP-certified</Link>{" "}
+              U.S. wire harness and cable assembly manufacturer — trusted with export-controlled defense technical data and specializing in{" "}
               <Link to="/rapid-prototype-cable-assembly" className="text-primary underline-offset-4 hover:underline">rapid-turn</Link>,
-              high-reliability cable assemblies for aerospace, defense, robotics, and advanced systems.
+              high-reliability assemblies for aerospace, defense, robotics, and advanced systems.
             </p>
 
             {/* CTAs */}
