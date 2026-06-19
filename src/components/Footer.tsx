@@ -39,9 +39,20 @@ const Footer = () => {
               U.S.-based custom cable assembly manufacturer specializing in high-quality 
               wire harnesses for aerospace, defense, robotics, and advanced technology sectors.
             </p>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Shield className="h-4 w-4 text-primary" />
-              AS9100D / ISO 9001:2015 Certified
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Shield className="h-4 w-4 text-primary" />
+                AS9100D / ISO 9001:2015 Certified
+              </div>
+              <Link
+                to="/#jcp-certification"
+                onClick={scrollToTop}
+                className="flex items-center gap-2 transition-colors hover:text-primary"
+                aria-label="JCP Certified — Joint Certification Program badge for Castmen Electronics"
+              >
+                <ShieldCheck className="h-4 w-4 text-primary" />
+                JCP Certified
+              </Link>
             </div>
           </div>
 
