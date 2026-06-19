@@ -80,6 +80,7 @@ const engineeringPoints = [
 
 const qualityStandards = [
   "AS9100D / ISO 9001:2015",
+  "DLA JCP certified (DD Form 2345)",
   "IPC/WHMA-A-620",
   "IPC J-STD-001",
   "100% functional testing",
