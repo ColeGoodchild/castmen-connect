@@ -185,6 +185,99 @@ const Certifications = () => {
             </div>
           </div>
         </div>
+
+        {/* Dedicated JCP Section */}
+        <div id="jcp-certification" className="relative mt-20 scroll-mt-24 overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/10 via-card/60 to-card/40 p-8 backdrop-blur-sm lg:p-12">
+          <div className="grid gap-10 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-4 py-2 text-sm font-medium text-primary">
+                <ShieldCheck className="h-4 w-4" />
+                DLA Joint Certification Program
+              </div>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Joint Certification Program (JCP) Certification
+              </h2>
+              <p className="mb-6 text-lg text-muted-foreground">
+                Castmen Electronics is a <strong className="text-foreground">JCP-certified wire harness and cable assembly manufacturer</strong> based in
+                Seneca Falls, NY — vetted by the U.S. Defense Logistics Agency (DLA) to access export-controlled
+                unclassified military technical data through an approved DD Form 2345.
+              </p>
+
+              <h3 className="mb-2 text-xl font-semibold text-foreground">What the Joint Certification Program is</h3>
+              <p className="mb-6 text-muted-foreground">
+                Administered by the DLA, the Joint Certification Program certifies U.S. and Canadian
+                companies to receive unclassified military technical data that is export-controlled and not
+                released to the public. Each certified company is documented via an approved{" "}
+                <a
+                  href="https://www.dla.mil/logistics-operations/services/joint-certification-program/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline-offset-4 hover:underline"
+                >
+                  DD Form 2345
+                </a>
+                .
+              </p>
+
+              <h3 className="mb-2 text-xl font-semibold text-foreground">What JCP certification allows us to do</h3>
+              <ul className="mb-6 space-y-2 text-muted-foreground">
+                <li className="flex gap-2">
+                  <FileBadge className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                  Receive and work from export-controlled unclassified military technical drawings, prints, and specifications.
+                </li>
+                <li className="flex gap-2">
+                  <FileBadge className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                  Support defense-related research, manufacturing, and government contract work as a vetted DLA JCP-certified supplier.
+                </li>
+                <li className="flex gap-2">
+                  <FileBadge className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                  Participate in export-controlled defense manufacturing programs that require a documented Joint Certification Program manufacturer.
+                </li>
+              </ul>
+
+              <h3 className="mb-2 text-xl font-semibold text-foreground">Why it matters to our customers</h3>
+              <p className="text-muted-foreground">
+                Working with a DLA JCP-certified, DD Form 2345 certified supplier means your defense
+                technical data is handled by a partner that has been formally vetted for compliance and
+                trustworthiness in the defense supply chain — alongside our{" "}
+                <Link to="/itar-cable-assembly-manufacturer" className="text-primary underline-offset-4 hover:underline">
+                  ITAR registration
+                </Link>{" "}
+                and{" "}
+                <Link to="/as9100-wire-harness-manufacturer" className="text-primary underline-offset-4 hover:underline">
+                  AS9100D quality system
+                </Link>
+                .
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div
+                role="img"
+                aria-label="JCP Certified — Joint Certification Program badge for Castmen Electronics"
+                className="flex flex-col items-center justify-center rounded-2xl border-2 border-primary/50 bg-card/70 p-8 text-center shadow-lg"
+              >
+                <div className="mb-4 rounded-full border-2 border-primary/60 bg-primary/15 p-5 text-primary">
+                  <ShieldCheck className="h-12 w-12" />
+                </div>
+                <div className="text-xs font-medium uppercase tracking-widest text-primary">
+                  DLA Certified
+                </div>
+                <div className="mt-1 text-2xl font-bold text-foreground">JCP Certified</div>
+                <div className="mt-2 text-sm text-muted-foreground">
+                  Joint Certification Program
+                </div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  DD Form 2345 on file
+                </div>
+              </div>
+              <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/20 p-3 text-xs text-muted-foreground">
+                <Globe2 className="h-4 w-4 flex-shrink-0 text-primary" />
+                Castmen Electronics · Seneca Falls, NY · U.S.-based defense supplier
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
