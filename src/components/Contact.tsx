@@ -217,9 +217,24 @@ const Contact = () => {
                         Monday - Friday
                         <br />
                         8:00 AM - 5:00 PM EST
-                      </div>
                     </div>
                   </div>
+                </div>
+
+                <div className="mt-8 rounded-lg border border-primary/30 bg-primary/5 p-4">
+                  <div className="mb-1 text-xs font-medium uppercase tracking-wider text-primary">
+                    Our Credentials
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    AS9100D · ITAR Registered ·{" "}
+                    <Link
+                      to="/#jcp-certification"
+                      className="text-primary underline-offset-4 hover:underline"
+                    >
+                      JCP Certified (DD Form 2345)
+                    </Link>{" "}
+                    — vetted for export-controlled defense manufacturing.
+                  </p>
                 </div>
               </div>
 
