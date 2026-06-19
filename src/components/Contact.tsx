@@ -217,6 +217,7 @@ const Contact = () => {
                         Monday - Friday
                         <br />
                         8:00 AM - 5:00 PM EST
+                      </div>
                     </div>
                   </div>
                 </div>
