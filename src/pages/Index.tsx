@@ -37,6 +37,7 @@ const Index = () => {
         <Industries />
         <Differentiators />
         <Certifications />
+        <Documents />
         <Contact />
       </main>
       <Footer />
