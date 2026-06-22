@@ -7,6 +7,7 @@ import EngineeringCapabilities from "@/components/EngineeringCapabilities";
 import Industries from "@/components/Industries";
 import Differentiators from "@/components/Differentiators";
 import Certifications from "@/components/Certifications";
+import Documents from "@/components/Documents";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -36,6 +37,7 @@ const Index = () => {
         <Industries />
         <Differentiators />
         <Certifications />
+        <Documents />
         <Contact />
       </main>
       <Footer />
