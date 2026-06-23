@@ -22,7 +22,7 @@ const documents = [
     actionLabel: "Download",
     actionIcon: Download,
     href: "/documents/castmen-supplier-terms-and-conditions.pdf",
-    download: true,
+    download: false,
   },
   {
     icon: FileText,
@@ -33,7 +33,7 @@ const documents = [
     actionLabel: "Download",
     actionIcon: Download,
     href: "/documents/castmen-client-terms-and-conditions.pdf",
-    download: true,
+    download: false,
   },
 ];
 
