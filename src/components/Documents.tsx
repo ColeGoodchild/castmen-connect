@@ -82,9 +82,9 @@ const Documents = () => {
                 <Button asChild variant="outline" className="w-full">
                   <a
                     href={doc.href}
-                    {...(doc.download
-                      ? { target: "_blank", rel: "noopener noreferrer", download: "" }
-                      : {})}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    {...(doc.download ? { download: "" } : {})}
                   >
                     <ActionIcon className="mr-2 h-4 w-4" />
                     {doc.actionLabel}
