@@ -34,6 +34,11 @@ const ALL_LINKS: RelatedLink[] = [
     desc: "Fast-turn prototypes with a seamless path to full production.",
   },
   {
+    to: "/rf-cable-manufacturing-testing",
+    title: "RF Cable Manufacturing & VNA Testing",
+    desc: "RF and coaxial cable assemblies with in-house VNA testing to 20 GHz.",
+  },
+  {
     to: "/case-studies",
     title: "Case Studies",
     desc: "Real-world aerospace and robotics projects we've delivered.",

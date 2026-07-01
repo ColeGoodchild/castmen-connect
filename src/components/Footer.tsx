@@ -147,6 +147,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/rf-cable-manufacturing-testing"
+                  onClick={scrollToTop}
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  RF Cable Manufacturing & Testing
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/case-studies"
                   onClick={scrollToTop}
                   className="text-muted-foreground transition-colors hover:text-primary"
