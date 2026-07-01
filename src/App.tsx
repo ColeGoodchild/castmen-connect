@@ -9,6 +9,7 @@ import MilSpecCableAssemblies from "./pages/MilSpecCableAssemblies";
 import ItarCableAssembly from "./pages/ItarCableAssembly";
 import As9100WireHarness from "./pages/As9100WireHarness";
 import RapidPrototypeCableAssembly from "./pages/RapidPrototypeCableAssembly";
+import RfCableManufacturingTesting from "./pages/RfCableManufacturingTesting";
 import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/itar-cable-assembly-manufacturer" element={<ItarCableAssembly />} />
           <Route path="/as9100-wire-harness-manufacturer" element={<As9100WireHarness />} />
           <Route path="/rapid-prototype-cable-assembly" element={<RapidPrototypeCableAssembly />} />
+          <Route path="/rf-cable-manufacturing-testing" element={<RfCableManufacturingTesting />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
