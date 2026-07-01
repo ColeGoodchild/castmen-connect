@@ -45,9 +45,10 @@ const capabilities: {
     description: "Engineered solutions for high-performance applications.",
   },
   {
-    icon: Cpu,
-    title: "Panel Wiring & Integration",
-    description: "Complete panel wiring with labeling, routing, and termination.",
+    icon: Radio,
+    title: "RF Manufacturing & Testing",
+    description: "RF coaxial cable assemblies with VNA testing up to 20 GHz, Touchstone file generation, and signal integrity verification.",
+    link: "/rf-cable-manufacturing-testing",
   },
   {
     icon: Settings,
