@@ -13,6 +13,9 @@ import {
   Waves,
   FlaskConical,
   Factory,
+  ClipboardCheck,
+  BadgeCheck,
+  FileText,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -22,7 +25,7 @@ import RelatedResources from "@/components/RelatedResources";
 
 const PAGE_TITLE = "RF Cable Manufacturing & VNA Testing | Castmen Electronics";
 const PAGE_DESCRIPTION =
-  "AS9100D-certified RF cable assembly manufacturing with in-house VNA testing to 20 GHz. ITAR-registered, JCP-certified. Request a quote today.";
+  "AS9100D-certified RF cable assembly manufacturing with 100% in-house VNA verification to 20 GHz. ITAR-registered, JCP-certified. Request a quote today.";
 
 const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
   let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
@@ -35,113 +38,154 @@ const setMeta = (name: string, content: string, attr: "name" | "property" = "nam
 };
 
 const heroPoints = [
-  "In-house VNA testing to 20 GHz",
+  "100% VNA verification to 20 GHz",
   "AS9100D / ISO 9001:2015 quality system",
   "ITAR-registered & JCP-certified",
   "Build-to-print RF & microwave assemblies",
 ];
 
+const whyEngineers = [
+  "100% S-Parameter verification on every assembly",
+  "Vector Network Analyzer testing to 20 GHz",
+  "Customer-defined pass/fail limits",
+  "Return loss, VSWR & insertion loss testing",
+  "Phase matching & electrical length verification",
+  "Serialized cable assemblies",
+  "Complete test reports included",
+  "First Article Inspection (FAI) available",
+  "Full material & process traceability",
+  "AS9100D / ISO 9001 certified manufacturing",
+  "ITAR registered & JCP certified",
+];
+
 const manufacturingCapabilities = [
-  {
-    icon: Radio,
-    title: "Coaxial & Microwave Assemblies",
-    desc: "Custom RF cables for radar, EW, SATCOM, and communications systems.",
-  },
   {
     icon: Factory,
     title: "Build-to-Print Manufacturing",
-    desc: "Fabrication directly from your drawings, specifications, and BOMs.",
+    desc: "Assemblies manufactured exactly to customer documentation using qualified processes and controlled workmanship.",
+  },
+  {
+    icon: FlaskConical,
+    title: "Prototype Through Production",
+    desc: "From engineering prototypes and qualification units to repeatable production volumes.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Serialized Assemblies",
+    desc: "Each cable assembly can be individually serialized for complete lifecycle tracking and configuration management.",
   },
   {
     icon: FileCheck,
     title: "Full Traceability",
-    desc: "Complete material traceability and documentation package with every build.",
+    desc: "Material lot traceability, manufacturing records, inspection documentation, and test results maintained throughout production.",
   },
-  {
-    icon: FlaskConical,
-    title: "Prototype to Production",
-    desc: "Low-volume prototypes through repeatable production runs.",
-  },
-];
-
-const testingCapabilities = [
-  "Vector Network Analyzer (VNA) testing to 20 GHz",
-  "Return loss and insertion loss measurement",
-  "VSWR (voltage standing wave ratio) testing",
-  "Phase and electrical length measurements",
-  "S-parameter characterization with full Touchstone (.sNp) files",
-  "Acceptance testing to customer or industry specification",
-  "First-article inspection and lot acceptance testing",
-  "Calibrated equipment operated under an AS9100 QMS",
-];
-
-const whyPoints = [
   {
     icon: Award,
-    title: "AS9100D / ISO 9001:2015 Certified",
-    desc: "Audit-ready quality system built for aerospace and defense supply chains.",
+    title: "Aerospace & Defense Quality",
+    desc: "Manufactured under our AS9100-certified quality system for demanding aerospace, defense, medical, communications, and industrial applications.",
   },
   {
-    icon: ShieldCheck,
-    title: "ITAR Registered",
-    desc: "Cleared to support defense and controlled-technology programs.",
+    icon: Radio,
+    title: "Custom RF & Microwave",
+    desc: "Coaxial and microwave assemblies built to your drawings, specifications, and performance requirements.",
   },
-  {
-    icon: ShieldCheck,
-    title: "DLA JCP Certified",
-    desc: "Joint Certification Program qualified for DLA and DoD procurement.",
-  },
-  {
-    icon: Activity,
-    title: "Test What We Build",
-    desc: "RF assemblies manufactured and electrically verified in-house — no third-party handoffs.",
-  },
-  {
-    icon: Factory,
-    title: "Upstate New York Based",
-    desc: "Domestic manufacturing and testing with responsive turnaround for U.S. customers.",
-  },
-  {
-    icon: Gauge,
-    title: "Documented Performance Data",
-    desc: "Traceable test records and Touchstone files delivered with every acceptance test.",
-  },
+];
+
+const testCapabilities = [
+  "Full S-Parameter measurement",
+  "Return loss",
+  "VSWR",
+  "Insertion loss",
+  "Phase matching",
+  "Electrical length",
+  "Port-to-port verification",
+  "Frequency sweeps to 20 GHz",
+];
+
+const acceptanceCriteria = [
+  "Maximum insertion loss",
+  "Minimum return loss",
+  "VSWR limits",
+  "Phase matching tolerances",
+  "Frequency-specific requirements",
+  "Custom acceptance limits",
+];
+
+const documentation = [
+  "Individual test reports",
+  "S-Parameter data",
+  "Touchstone (.sNp) files",
+  "Serialized test records",
+  "First Article Inspection (FAI)",
+  "Certificate of Conformance",
+  "Material traceability",
+  "Inspection records",
+];
+
+const faiServices = [
+  "First Article Inspection",
+  "Prototype evaluation",
+  "Qualification testing",
+  "Production validation",
+  "Lot acceptance testing",
+];
+
+const itarPoints = [
+  "AS9100D / ISO 9001:2015 Certified",
+  "ITAR Registered",
+  "JCP Certified (DD Form 2345)",
+  "Experienced with defense documentation requirements",
 ];
 
 const industries = [
   "Aerospace",
   "Defense",
+  "Electronic Warfare",
+  "SATCOM",
+  "Radar Systems",
   "Medical Devices",
   "Robotics",
   "Industrial Automation",
+  "Test & Measurement Equipment",
+  "Communications Infrastructure",
 ];
 
 const expectations = [
+  "Engineering review",
+  "Fast quotations",
+  "Customer-specific test planning",
   "Response within 24 hours",
-  "Engineering review included",
   "NDA available upon request",
 ];
 
 const faqs = [
   {
-    q: "What frequency range does Castmen test RF cables to?",
-    a: "Our in-house Vector Network Analyzer (VNA) supports RF cable testing up to 20 GHz, covering the majority of aerospace, defense, SATCOM, and industrial RF applications.",
+    q: "Is every RF cable assembly electrically tested?",
+    a: "Yes. We perform 100% Vector Network Analyzer verification on every production RF cable assembly using customer-defined acceptance criteria whenever required.",
   },
   {
-    q: "Can Castmen test RF cables we manufacture ourselves?",
-    a: "Yes. We offer standalone RF cable testing as an independent, calibrated verification service — including Touchstone file generation, VSWR, insertion loss, return loss, and phase measurements — for customers who build their own assemblies.",
+    q: "What measurements do you perform?",
+    a: "Our standard RF verification capabilities include S-Parameters, Return Loss, VSWR, Insertion Loss, Phase Matching, and Electrical Length. Testing is available to 20 GHz.",
   },
   {
-    q: "What test data do you deliver with an RF cable assembly?",
-    a: "Every acceptance test includes traceable records generated under our AS9100 QMS. On request we deliver full S-parameter Touchstone (.sNp) files for direct use in your engineering models.",
+    q: "Do you provide test reports?",
+    a: "Yes. Individual test reports are available with every assembly. We can also provide Touchstone (.sNp) files, serialized test records, certificates of conformance, and additional documentation as required.",
   },
   {
-    q: "Do you support ITAR and export-controlled RF programs?",
-    a: "Yes. Castmen is ITAR registered and JCP-certified (DD Form 2345 on file), so we are qualified to receive export-controlled unclassified military technical data for defense RF programs.",
+    q: "Can you test to our own specifications?",
+    a: "Absolutely. We establish pass/fail criteria directly from your drawings, specifications, or engineering requirements, including custom frequency ranges and acceptance limits.",
   },
   {
-    q: "Can you handle both prototypes and production runs?",
-    a: "Yes. We build RF and coaxial cable assemblies from prototype quantities through repeatable production, with the same documentation package across every build.",
+    q: "Are assemblies serialized?",
+    a: "Yes. Serialized cable assemblies are available to support full traceability, maintenance programs, and defense or aerospace documentation requirements.",
+  },
+  {
+    q: "Do you support ITAR-controlled programs?",
+    a: "Yes. Castmen is ITAR Registered and JCP Certified, allowing us to support export-controlled defense manufacturing programs while maintaining secure handling of technical data.",
+  },
+  {
+    q: "Can you support prototypes and production?",
+    a: "Yes. We manufacture everything from engineering prototypes and first articles to full-rate production, using the same quality system, documentation, and electrical verification process throughout.",
   },
 ];
 
@@ -189,12 +233,11 @@ const RfCableManufacturingTesting = () => {
                 AS9100D CERTIFIED • ITAR REGISTERED • JCP CERTIFIED
               </div>
               <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                RF Cable Assembly Manufacturing & In-House VNA Testing
+                RF Cable Assembly Manufacturing with 100% In-House VNA Verification
               </h1>
               <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-                Full-service RF and coaxial cable assembly manufacturing paired with in-house
-                Vector Network Analyzer testing to 20 GHz — built, tested, and certified under
-                one roof.
+                Precision RF and microwave cable assemblies manufactured, electrically verified,
+                and fully documented under one AS9100-certified quality system.
               </p>
               <div className="mb-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button size="lg" asChild>
@@ -223,98 +266,31 @@ const RfCableManufacturingTesting = () => {
         {/* INTRO */}
         <section className="container mx-auto px-4 py-16 lg:py-20">
           <div className="mx-auto max-w-3xl space-y-5 text-center">
-            <p className="text-lg text-muted-foreground">
-              Castmen Electronics now offers full-service RF cable assembly manufacturing paired
-              with in-house Vector Network Analyzer (VNA) testing to 20 GHz — giving aerospace,
-              defense, medical, and industrial automation customers a single source for
-              build-to-print RF cables that are manufactured, tested, and certified under one
-              roof.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              As an{" "}
-              <Link to="/as9100-wire-harness-manufacturer" className="text-primary underline-offset-4 hover:underline">
-                AS9100D / ISO 9001:2015 certified
-              </Link>
-              ,{" "}
-              <Link to="/itar-cable-assembly-manufacturer" className="text-primary underline-offset-4 hover:underline">
-                ITAR-registered
-              </Link>
-              , DLA Joint Certification Program (JCP) manufacturer based in upstate New York, we
-              bring the same audit-ready quality discipline that defense and aerospace primes
-              already trust for{" "}
-              <Link to="/custom-wire-harness-manufacturer-usa" className="text-primary underline-offset-4 hover:underline">
-                wire harness and cable assembly work
-              </Link>{" "}
-              — now extended to RF and microwave applications.
-            </p>
-          </div>
-        </section>
-
-        {/* MANUFACTURING */}
-        <section className="border-y border-border/50 bg-card/30 py-20">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto mb-12 max-w-3xl text-center">
-              <div className="mb-3 inline-flex items-center gap-2 text-xs font-medium tracking-widest text-primary">
-                <Radio className="h-4 w-4" /> RF MANUFACTURING
-              </div>
-              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-                RF Cable Assembly Manufacturing
-              </h2>
-              <p className="text-muted-foreground">
-                We build custom RF and coaxial cable assemblies to print, from prototype quantities
-                through production runs.
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {manufacturingCapabilities.map((c) => (
-                <Card key={c.title} className="border-border/50 bg-background/50">
-                  <CardHeader>
-                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                      <c.icon className="h-5 w-5" />
-                    </div>
-                    <CardTitle className="text-xl">{c.title}</CardTitle>
-                    <CardDescription>{c.desc}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* TESTING */}
-        <section className="container mx-auto px-4 py-20">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <div className="mb-3 inline-flex items-center gap-2 text-xs font-medium tracking-widest text-primary">
-              <Waves className="h-4 w-4" /> RF TESTING
-            </div>
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              RF Cable Testing Services
+            <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+              High-Reliability RF Cable Assemblies for Aerospace, Defense & Industrial Applications
             </h2>
-            <p className="text-muted-foreground">
-              Every RF cable assembly we build is backed by in-house electrical test capability —
-              and we also offer RF cable testing as a standalone service for customers who
-              manufacture their own assemblies but need independent, calibrated verification.
+            <p className="text-lg text-muted-foreground">
+              Castmen Electronics manufactures custom RF and coaxial cable assemblies with
+              comprehensive in-house electrical verification using a calibrated Vector Network
+              Analyzer (VNA) to 20 GHz.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Every production assembly is manufactured, inspected, and tested under our{" "}
+              <Link to="/as9100-wire-harness-manufacturer" className="text-primary underline-offset-4 hover:underline">
+                AS9100D / ISO 9001:2015 Quality Management System
+              </Link>
+              , providing customers with complete confidence that every cable shipped meets its
+              specified electrical performance.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Whether you require prototypes, first articles, or production quantities, we provide
+              build-to-print manufacturing with complete documentation, serialized traceability,
+              and customer-specific acceptance testing.
             </p>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2">
-            {testingCapabilities.map((s) => (
-              <div
-                key={s}
-                className="flex items-start gap-3 rounded-lg border border-border/50 bg-card/40 p-4"
-              >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span className="text-foreground">{s}</span>
-              </div>
-            ))}
-          </div>
-          <p className="mx-auto mt-8 max-w-3xl text-center text-muted-foreground">
-            Whether you need first-article inspection, lot acceptance testing, or a standalone
-            Touchstone file for your engineering team, Castmen delivers accurate, documented RF
-            performance data on a fast turnaround.
-          </p>
         </section>
 
-        {/* WHY CHOOSE */}
+        {/* WHY ENGINEERS CHOOSE */}
         <section className="border-y border-border/50 bg-card/30 py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-3xl text-center">
@@ -322,21 +298,212 @@ const RfCableManufacturingTesting = () => {
                 <Award className="h-4 w-4" /> WHY CASTMEN
               </div>
               <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-                Why Manufacturers Choose Castmen for RF Work
+                Why Engineers Choose Castmen
               </h2>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {whyPoints.map((w) => (
-                <Card key={w.title} className="border-border/50 bg-background/50">
-                  <CardHeader>
-                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                      <w.icon className="h-5 w-5" />
-                    </div>
-                    <CardTitle className="text-xl">{w.title}</CardTitle>
-                    <CardDescription>{w.desc}</CardDescription>
-                  </CardHeader>
-                </Card>
+            <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2">
+              {whyEngineers.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 rounded-lg border border-border/50 bg-background/50 p-4"
+                >
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <span className="text-foreground">{item}</span>
+                </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* MANUFACTURING */}
+        <section className="container mx-auto px-4 py-20">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <div className="mb-3 inline-flex items-center gap-2 text-xs font-medium tracking-widest text-primary">
+              <Radio className="h-4 w-4" /> RF MANUFACTURING
+            </div>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+              RF Cable Assembly Manufacturing
+            </h2>
+            <p className="text-muted-foreground">
+              We manufacture custom RF and microwave cable assemblies built to your drawings,
+              specifications, and performance requirements.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {manufacturingCapabilities.map((c) => (
+              <Card key={c.title} className="border-border/50 bg-card/40">
+                <CardHeader>
+                  <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <c.icon className="h-5 w-5" />
+                  </div>
+                  <CardTitle className="text-xl">{c.title}</CardTitle>
+                  <CardDescription>{c.desc}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* 100% RF VERIFICATION */}
+        <section className="border-y border-border/50 bg-card/30 py-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <div className="mb-3 inline-flex items-center gap-2 text-xs font-medium tracking-widest text-primary">
+                <Waves className="h-4 w-4" /> 100% ELECTRICAL VERIFICATION
+              </div>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                100% RF Electrical Verification
+              </h2>
+              <p className="text-muted-foreground">
+                Unlike manufacturers that perform only sample testing, Castmen provides 100%
+                electrical verification of every production RF cable assembly using calibrated
+                Vector Network Analyzer equipment. Every assembly is tested against your electrical
+                requirements before shipment, ensuring consistent performance and eliminating
+                uncertainty during system integration.
+              </p>
+            </div>
+
+            <div className="mx-auto max-w-5xl">
+              <h3 className="mb-6 text-center text-xl font-semibold text-foreground">
+                Standard Test Capabilities
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {testCapabilities.map((s) => (
+                  <div
+                    key={s}
+                    className="flex items-start gap-3 rounded-lg border border-border/50 bg-background/50 p-4"
+                  >
+                    <Activity className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span className="text-foreground">{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CUSTOMER-SPECIFIC ACCEPTANCE */}
+        <section className="container mx-auto px-4 py-20">
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-10 text-center">
+              <div className="mb-3 inline-flex items-center gap-2 text-xs font-medium tracking-widest text-primary">
+                <ClipboardCheck className="h-4 w-4" /> ACCEPTANCE TESTING
+              </div>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                Customer-Specific Acceptance Testing
+              </h2>
+              <p className="mx-auto max-w-3xl text-muted-foreground">
+                Every program is unique. We configure test procedures using your drawings,
+                specifications, or engineering requirements. Every assembly is evaluated against
+                your required limits before release.
+              </p>
+            </div>
+            <h3 className="mb-6 text-center text-lg font-semibold text-foreground">
+              Customer-defined pass/fail criteria may include:
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {acceptanceCriteria.map((s) => (
+                <div
+                  key={s}
+                  className="flex items-start gap-3 rounded-lg border border-border/50 bg-card/40 p-4"
+                >
+                  <Gauge className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <span className="text-foreground">{s}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DOCUMENTATION */}
+        <section className="border-y border-border/50 bg-card/30 py-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <div className="mb-3 inline-flex items-center gap-2 text-xs font-medium tracking-widest text-primary">
+                <FileText className="h-4 w-4" /> DOCUMENTATION
+              </div>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                Complete Documentation Included
+              </h2>
+              <p className="text-muted-foreground">
+                Every shipment can include comprehensive documentation supporting quality and
+                compliance requirements. Engineering teams receive the electrical performance data
+                they need, while quality departments receive the documentation required for
+                regulated manufacturing environments.
+              </p>
+            </div>
+            <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {documentation.map((s) => (
+                <div
+                  key={s}
+                  className="flex items-start gap-3 rounded-lg border border-border/50 bg-background/50 p-4"
+                >
+                  <FileCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <span className="text-sm text-foreground">{s}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAI */}
+        <section className="container mx-auto px-4 py-20">
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-10 text-center">
+              <div className="mb-3 inline-flex items-center gap-2 text-xs font-medium tracking-widest text-primary">
+                <ClipboardCheck className="h-4 w-4" /> FAI & VALIDATION
+              </div>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                First Article Inspection & Production Validation
+              </h2>
+              <p className="mx-auto max-w-3xl text-muted-foreground">
+                We support qualification programs through comprehensive First Article Inspection
+                and validation testing. Our engineering and quality teams verify both physical
+                construction and electrical performance prior to production release, helping reduce
+                qualification risk and improve production consistency.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              {faiServices.map((s) => (
+                <div
+                  key={s}
+                  className="flex items-start gap-3 rounded-lg border border-border/50 bg-card/40 p-4"
+                >
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <span className="text-sm text-foreground">{s}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ITAR */}
+        <section className="border-y border-border/50 bg-card/30 py-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl text-center">
+              <div className="mb-3 inline-flex items-center gap-2 text-xs font-medium tracking-widest text-primary">
+                <ShieldCheck className="h-4 w-4" /> COMPLIANCE
+              </div>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                ITAR-Compliant Manufacturing
+              </h2>
+              <p className="mb-8 text-muted-foreground">
+                Castmen Electronics supports defense and export-controlled manufacturing programs
+                through secure handling procedures and controlled documentation. Sensitive
+                technical data and controlled manufacturing documentation are handled under
+                established quality procedures.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {itarPoints.map((s) => (
+                  <div
+                    key={s}
+                    className="flex items-start gap-3 rounded-lg border border-border/50 bg-background/50 p-4 text-left"
+                  >
+                    <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span className="text-foreground">{s}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -360,19 +527,47 @@ const RfCableManufacturingTesting = () => {
           </div>
         </section>
 
+        {/* WHY CASTMEN NARRATIVE */}
+        <section className="border-y border-border/50 bg-card/30 py-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-3xl space-y-5 text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                Why Castmen
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Many suppliers can manufacture RF cable assemblies.
+              </p>
+              <p className="text-lg text-foreground">
+                Few can manufacture, inspect, electrically verify, document, and certify every
+                assembly under one AS9100-certified quality system.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                At Castmen, manufacturing and verification happen under the same roof — eliminating
+                third-party testing delays while providing complete accountability from incoming
+                material through final shipment.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                The result is faster lead times, consistent electrical performance, complete
+                traceability, and documented confidence that every cable delivered meets your
+                requirements.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
-        <section className="border-t border-border/50 bg-gradient-to-b from-card/40 to-background py-20">
+        <section className="border-b border-border/50 bg-gradient-to-b from-card/40 to-background py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-                Need RF Cable Assemblies Built, Tested, or Both?
+                Request a Quote
               </h2>
               <p className="mb-8 text-muted-foreground">
-                Request a quote for RF manufacturing or standalone VNA acceptance testing — our
-                team will respond quickly with next steps for your specification, volume, and
-                timeline.
+                Whether you need prototype RF cable assemblies, production manufacturing, or
+                standalone electrical verification, our engineering team is ready to review your
+                requirements.
               </p>
-              <div className="mb-8 grid gap-3 text-left sm:grid-cols-3">
+              <div className="mb-8 grid gap-3 text-left sm:grid-cols-2 lg:grid-cols-3">
                 {expectations.map((e) => (
                   <div
                     key={e}
