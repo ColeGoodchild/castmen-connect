@@ -1,8 +1,8 @@
-import { ArrowRight, Shield, Zap, Award, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Shield, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import finishedMachineVideo from "@/assets/finished-machine.mp4.asset.json";
-import finishedMachinePoster from "@/assets/finished-machine-poster.jpg.asset.json";
+import ManufacturingAnimation from "@/components/ManufacturingAnimation";
+
 
 
 
@@ -112,48 +112,11 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Video */}
+          {/* Right Content - Manufacturing Animation */}
           <div className="relative hidden lg:flex lg:items-center lg:justify-center">
-            <div className="relative w-full">
-              {/* Video Container */}
-              <div className="animate-float relative overflow-hidden rounded-2xl border border-primary/30 bg-card/50 shadow-2xl glow-box-strong backdrop-blur-sm">
-                <video
-                  src={finishedMachineVideo.url}
-                  poster={finishedMachinePoster.url}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="h-full w-full object-cover"
-                  aria-label="Castmen Electronics manufacturing machine in operation"
-                />
-                {/* Subtle overlay accent */}
-                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-primary/20" />
-
-                {/* Floating credential badges */}
-                <div className="absolute -left-4 top-6 rounded-lg border border-primary/30 bg-card/95 p-3 shadow-xl glow-box backdrop-blur-sm">
-                  <Shield className="h-6 w-6 text-primary" />
-                </div>
-                <div className="absolute -right-4 bottom-6 rounded-lg border border-primary/30 bg-card/95 p-3 shadow-xl glow-box backdrop-blur-sm">
-                  <Award className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-
-              {/* Caption */}
-              <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                <Zap className="h-4 w-4 text-primary" />
-                <span>Precision manufacturing in action —{" "}
-                  <Link to="/itar-cable-assembly-manufacturer" className="text-primary hover:underline">ITAR</Link>
-                  {" · "}
-                  <Link to="/mil-spec-cable-assemblies" className="text-primary hover:underline">MIL-SPEC</Link>
-                </span>
-              </div>
-
-              {/* Background decorative elements */}
-              <div className="absolute -right-20 -top-20 -z-10 h-40 w-40 rounded-full border border-primary/10" />
-              <div className="absolute -bottom-10 -left-10 -z-10 h-24 w-24 rounded-full border border-primary/20" />
-            </div>
+            <ManufacturingAnimation />
           </div>
+
 
         </div>
       </div>
