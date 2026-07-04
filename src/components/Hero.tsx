@@ -119,6 +119,7 @@ const Hero = () => {
               <div className="animate-float relative overflow-hidden rounded-2xl border border-primary/30 bg-card/50 shadow-2xl glow-box-strong backdrop-blur-sm">
                 <video
                   src={finishedMachineVideo.url}
+                  poster={finishedMachinePoster.url}
                   autoPlay
                   loop
                   muted
