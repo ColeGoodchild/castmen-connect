@@ -2,6 +2,8 @@ import { ArrowRight, Shield, Zap, Award, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import finishedMachineVideo from "@/assets/finished-machine.mp4.asset.json";
+import finishedMachinePoster from "@/assets/finished-machine-poster.jpg.asset.json";
+
 
 
 const Hero = () => {
@@ -117,6 +119,7 @@ const Hero = () => {
               <div className="animate-float relative overflow-hidden rounded-2xl border border-primary/30 bg-card/50 shadow-2xl glow-box-strong backdrop-blur-sm">
                 <video
                   src={finishedMachineVideo.url}
+                  poster={finishedMachinePoster.url}
                   autoPlay
                   loop
                   muted
