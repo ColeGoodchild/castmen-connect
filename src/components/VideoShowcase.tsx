@@ -1,13 +1,58 @@
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, Volume2, VolumeX, Cpu, Ruler, ShieldCheck } from "lucide-react";
-import finishedMachineVideo from "@/assets/finished-machine.mp4.asset.json";
-import finishedMachinePoster from "@/assets/finished-machine-poster.jpg.asset.json";
+import {
+  Cpu,
+  Scissors,
+  ShieldCheck,
+  Award,
+  Layers3,
+  FileCheck2,
+  ArrowRight,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import facilityMachineVideo from "@/assets/facility-machine.mp4.asset.json";
+
+const capabilities = [
+  {
+    icon: Cpu,
+    title: "Automated Manufacturing",
+    desc: "Modern equipment delivering repeatable production.",
+  },
+  {
+    icon: Scissors,
+    title: "Precision Wire Processing",
+    desc: "Automated cutting, stripping, and preparation.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality Verification",
+    desc: "Processes designed for consistent quality.",
+  },
+  {
+    icon: Award,
+    title: "Aerospace Standards",
+    desc: "Produced under our AS9100-certified quality system.",
+  },
+  {
+    icon: Layers3,
+    title: "Scalable Production",
+    desc: "Prototypes through full production volumes.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Full Traceability",
+    desc: "Documented processes and serialized production when required.",
+  },
+];
+
+const hotspots = [
+  { top: "22%", left: "28%", label: "Precision Wire Feed" },
+  { top: "58%", left: "52%", label: "Automatic Processing" },
+  { top: "38%", left: "78%", label: "Quality Monitoring" },
+];
 
 const VideoShowcase = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -17,61 +62,56 @@ const VideoShowcase = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Lazy-start playback only when in view
+          videoRef.current?.play().catch(() => {});
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.2 }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
-  const togglePlay = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      v.play();
-      setIsPlaying(true);
-    } else {
-      v.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  const toggleMute = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = !v.muted;
-    setIsMuted(v.muted);
-  };
-
   return (
     <section
       ref={sectionRef}
       className="relative overflow-hidden bg-background py-24 sm:py-32"
-      aria-label="Precision manufacturing in action"
+      aria-label="Inside the facility"
     >
-      {/* Blueprint grid background */}
+      {/* Faint blueprint grid background */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        className="pointer-events-none absolute inset-0 opacity-[0.05] animate-[grid-drift_40s_linear_infinite]"
         style={{
           backgroundImage:
             "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
+          backgroundSize: "56px 56px",
           maskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+            "radial-gradient(ellipse at center, black 40%, transparent 90%)",
           WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+            "radial-gradient(ellipse at center, black 40%, transparent 90%)",
         }}
       />
-      {/* Technical crosshair marks */}
-      <div className="pointer-events-none absolute left-8 top-8 h-6 w-6 border-l border-t border-primary/40" />
-      <div className="pointer-events-none absolute right-8 top-8 h-6 w-6 border-r border-t border-primary/40" />
-      <div className="pointer-events-none absolute bottom-8 left-8 h-6 w-6 border-b border-l border-primary/40" />
-      <div className="pointer-events-none absolute bottom-8 right-8 h-6 w-6 border-b border-r border-primary/40" />
 
-      {/* Radial accent glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+      <style>{`
+        @keyframes grid-drift {
+          from { background-position: 0 0, 0 0; }
+          to { background-position: 56px 56px, 56px 56px; }
+        }
+        @keyframes scan-sweep {
+          0% { transform: translateY(-10%); opacity: 0; }
+          8% { opacity: 1; }
+          40% { transform: translateY(110%); opacity: 1; }
+          45%, 100% { opacity: 0; transform: translateY(110%); }
+        }
+        .scan-line {
+          animation: scan-sweep 12s ease-in-out infinite;
+        }
+        @keyframes hotspot-pulse {
+          0%, 100% { transform: scale(1); opacity: 0.9; }
+          50% { transform: scale(1.35); opacity: 0.4; }
+        }
+      `}</style>
 
       <div className="container relative mx-auto px-4">
         {/* Section heading */}
@@ -85,112 +125,165 @@ const VideoShowcase = () => {
             Inside the Facility
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Precision Manufacturing,
-            <span className="block text-gradient">Engineered in Motion</span>
+            Precision Manufacturing
+            <span className="block text-gradient">Powered by Advanced Automation</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            A real look inside our AS9100D-certified production floor — automated
-            precision, tight tolerances, and process discipline built for
-            aerospace, defense, and mission-critical programs.
+            At Castmen Corporation, we continuously invest in advanced
+            manufacturing technology to improve quality, repeatability, and
+            production efficiency. Our automated equipment supports precision
+            wire processing, cable assembly, and mission-critical manufacturing
+            for aerospace, defense, medical, industrial, and telecommunications
+            applications.
           </p>
         </div>
 
-        {/* Video frame */}
-        <div
-          className={`relative mx-auto max-w-6xl transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          {/* Corner spec labels */}
-          <div className="absolute -top-3 left-6 z-10 rounded-sm border border-primary/40 bg-background px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
-            REC · 01
-          </div>
-          <div className="absolute -top-3 right-6 z-10 rounded-sm border border-border bg-background px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-            CASTMEN · FACILITY FEED
-          </div>
-
-          <div className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-2xl transition-all duration-500 hover:shadow-[0_30px_80px_-20px_hsl(190_100%_50%/0.35)] hover:border-primary/40">
-            {/* Inner ring */}
-            <div className="pointer-events-none absolute inset-0 z-20 rounded-2xl ring-1 ring-inset ring-primary/10" />
-
-            <video
-              ref={videoRef}
-              src={finishedMachineVideo.url}
-              poster={finishedMachinePoster.url}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="block h-auto w-full object-cover"
-              aria-label="Castmen Electronics manufacturing floor footage"
-            />
-
-            {/* Subtle gradient overlay for control legibility */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
-
-            {/* Controls */}
-            <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={togglePlay}
-                  aria-label={isPlaying ? "Pause video" : "Play video"}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-background/80 text-primary backdrop-blur-md transition-all hover:scale-105 hover:bg-primary hover:text-primary-foreground"
-                >
-                  {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-                </button>
-                <button
-                  onClick={toggleMute}
-                  aria-label={isMuted ? "Unmute video" : "Mute video"}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/80 text-foreground backdrop-blur-md transition-all hover:scale-105 hover:border-primary/40 hover:text-primary"
-                >
-                  {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
-                </button>
+        {/* Video + capabilities layout */}
+        <div className="grid gap-8 lg:grid-cols-5 lg:gap-10">
+          {/* Video (60% on desktop) */}
+          <div
+            className={`lg:col-span-3 transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="group relative">
+              {/* Corner spec labels */}
+              <div className="absolute -top-3 left-6 z-20 rounded-sm border border-primary/40 bg-background px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
+                CAM · 01
               </div>
-              <div className="hidden items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur-md sm:flex">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                LIVE FEED · AS9100D
+              <div className="absolute -top-3 right-6 z-20 rounded-sm border border-border bg-background px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                FACILITY LIVE
+              </div>
+
+              <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-card shadow-2xl transition-shadow duration-500 hover:shadow-[0_30px_80px_-20px_hsl(190_100%_50%/0.4)]">
+                <video
+                  ref={videoRef}
+                  src={facilityMachineVideo.url}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="none"
+                  className="block h-full max-h-[640px] w-full object-cover"
+                  aria-label="Castmen Corporation automated manufacturing machine"
+                />
+
+                {/* Blueprint grid overlay */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-[0.08]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+                    backgroundSize: "32px 32px",
+                  }}
+                />
+
+                {/* Dimension lines */}
+                <div className="pointer-events-none absolute inset-4 rounded-lg border border-primary/20" />
+                <div className="pointer-events-none absolute left-4 top-1/2 h-px w-6 bg-primary/40" />
+                <div className="pointer-events-none absolute right-4 top-1/2 h-px w-6 bg-primary/40" />
+                <div className="pointer-events-none absolute left-1/2 top-4 h-6 w-px bg-primary/40" />
+                <div className="pointer-events-none absolute bottom-4 left-1/2 h-6 w-px bg-primary/40" />
+
+                {/* Corner registration marks */}
+                <div className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l-2 border-t-2 border-primary/60" />
+                <div className="pointer-events-none absolute right-3 top-3 h-4 w-4 border-r-2 border-t-2 border-primary/60" />
+                <div className="pointer-events-none absolute bottom-3 left-3 h-4 w-4 border-b-2 border-l-2 border-primary/60" />
+                <div className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b-2 border-r-2 border-primary/60" />
+
+                {/* Scanning inspection line */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-full overflow-hidden">
+                  <div className="scan-line absolute inset-x-0 h-24 bg-gradient-to-b from-transparent via-primary/25 to-transparent" />
+                </div>
+
+                {/* Status indicator */}
+                <div className="pointer-events-none absolute right-4 top-4 z-10 flex items-center gap-2 rounded-full border border-primary/40 bg-background/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-primary backdrop-blur-md">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                  AS9100D
+                </div>
+
+                {/* Hover hotspots */}
+                {hotspots.map((h, i) => (
+                  <div
+                    key={i}
+                    className="group/hot absolute z-10"
+                    style={{ top: h.top, left: h.left }}
+                  >
+                    <div className="relative -translate-x-1/2 -translate-y-1/2">
+                      <span
+                        className="absolute inset-0 h-3 w-3 rounded-full bg-primary/60"
+                        style={{
+                          animation: `hotspot-pulse 2.4s ease-in-out ${i * 0.6}s infinite`,
+                        }}
+                      />
+                      <span className="relative block h-3 w-3 rounded-full border border-primary bg-primary/80 shadow-[0_0_12px_hsl(var(--primary))]" />
+                      <div className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md border border-primary/40 bg-background/95 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-foreground opacity-0 shadow-lg backdrop-blur-md transition-opacity duration-200 group-hover/hot:opacity-100">
+                        {h.label}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Spec strip */}
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {[
-              {
-                icon: Ruler,
-                label: "Tight Tolerances",
-                value: "Repeatable precision on every build",
-              },
-              {
-                icon: Cpu,
-                label: "Automated Process",
-                value: "Machine-controlled consistency",
-              },
-              {
-                icon: ShieldCheck,
-                label: "AS9100D Verified",
-                value: "Documented, traceable, audit-ready",
-              },
-            ].map(({ icon: Icon, label, value }, i) => (
-              <div
-                key={label}
-                className={`group/card flex items-start gap-3 rounded-xl border border-border bg-card/50 p-4 backdrop-blur-sm transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: `${400 + i * 120}ms` }}
-              >
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary transition-colors group-hover/card:bg-primary group-hover/card:text-primary-foreground">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-primary">
-                    {label}
+          {/* Capabilities (40% on desktop) */}
+          <div className="lg:col-span-2">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              {capabilities.map(({ icon: Icon, title, desc }, i) => (
+                <div
+                  key={title}
+                  className={`group/card flex items-start gap-3 rounded-xl border border-border bg-card/60 p-4 backdrop-blur-sm transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: `${200 + i * 90}ms` }}
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary transition-colors group-hover/card:bg-primary group-hover/card:text-primary-foreground">
+                    <Icon className="h-5 w-5" />
                   </div>
-                  <div className="mt-1 text-sm text-foreground">{value}</div>
+                  <div>
+                    <div className="text-sm font-semibold text-foreground">
+                      {title}
+                    </div>
+                    <div className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {desc}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div
+          className={`mx-auto mt-16 max-w-4xl rounded-2xl border border-border bg-card/50 p-8 text-center backdrop-blur-sm transition-all duration-700 sm:p-10 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+          style={{ transitionDelay: "800ms" }}
+        >
+          <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Ready to Build Your Next Project?
+          </h3>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
+            Whether you need custom wire harnesses, cable assemblies, RF cable
+            assemblies, or complete electromechanical assemblies, our team is
+            ready to support your next program.
+          </p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              to="/#contact"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:scale-[1.02] hover:bg-primary/90"
+            >
+              Request a Quote
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/#capabilities"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-primary/40 bg-background px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary hover:bg-primary/10"
+            >
+              View Manufacturing Capabilities
+            </Link>
           </div>
         </div>
       </div>
