@@ -9,7 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import facilityMachineVideo from "@/assets/facility-machine.mp4.asset.json";
+const FACILITY_MACHINE_VIDEO_URL = "/videos/facility-machine.mp4";
 
 const capabilities = [
   {
