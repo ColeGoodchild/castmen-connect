@@ -9,7 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import facilityMachineVideo from "@/assets/facility-machine.mp4.asset.json";
+const FACILITY_MACHINE_VIDEO_URL = "/videos/facility-machine.mp4";
 
 const capabilities = [
   {
@@ -158,7 +158,7 @@ const VideoShowcase = () => {
               <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-card shadow-2xl transition-shadow duration-500 hover:shadow-[0_30px_80px_-20px_hsl(190_100%_50%/0.4)]">
                 <video
                   ref={videoRef}
-                  src={facilityMachineVideo.url}
+                  src={FACILITY_MACHINE_VIDEO_URL}
                   autoPlay
                   loop
                   muted
