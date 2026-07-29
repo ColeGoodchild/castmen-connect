@@ -53,6 +53,15 @@ const Footer = () => {
                 <ShieldCheck className="h-4 w-4 text-primary" />
                 JCP Certified
               </Link>
+              <Link
+                to="/#cmmc-certification"
+                onClick={scrollToTop}
+                className="flex items-center gap-2 transition-colors hover:text-primary"
+                aria-label="CMMC Level 2 Self-Certified badge for Castmen Electronics"
+              >
+                <ShieldCheck className="h-4 w-4 text-primary" />
+                CMMC L2 Self-Certified
+              </Link>
             </div>
           </div>
 
@@ -191,10 +200,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-8 text-sm text-muted-foreground md:flex-row">
           <div>© {currentYear} Castmen Electronics. All rights reserved.</div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 md:justify-end">
             <span>ITAR Compliant</span>
             <span className="text-border">•</span>
             <span>JCP Certified</span>
+            <span className="text-border">•</span>
+            <span>CMMC L2 Self-Certified</span>
             <span className="text-border">•</span>
             <span>Made in USA</span>
           </div>
