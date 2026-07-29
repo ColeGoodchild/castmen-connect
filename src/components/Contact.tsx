@@ -235,6 +235,13 @@ const Contact = () => {
                     >
                       JCP Certified (DD Form 2345)
                     </Link>{" "}
+                    ·{" "}
+                    <Link
+                      to="/#cmmc-certification"
+                      className="text-primary underline-offset-4 hover:underline"
+                    >
+                      CMMC L2 Self-Certified
+                    </Link>{" "}
                     — vetted for export-controlled defense manufacturing.
                   </p>
                 </div>

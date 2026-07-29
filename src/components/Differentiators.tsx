@@ -1,4 +1,4 @@
-import { MapPin, Zap, Users, Award, Clock, CheckCircle } from "lucide-react";
+import { MapPin, Zap, Users, Award, Clock, CheckCircle, ShieldCheck } from "lucide-react";
 
 const differentiators = [
   {
@@ -36,6 +36,12 @@ const differentiators = [
     title: "Flexible Production",
     description: "From low-volume prototypes to high-volume production runs.",
     highlight: "Custom Solutions",
+  },
+  {
+    icon: ShieldCheck,
+    title: "CMMC L2 Self-Certified",
+    description: "Cybersecurity-maturity assessed for defense contracts and controlled unclassified information.",
+    highlight: "DoD Ready",
   },
 ];
 

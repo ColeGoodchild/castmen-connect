@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Phone, Mail, Home } from "lucide-react";
+import { Menu, X, Phone, Mail, Home, ShieldCheck } from "lucide-react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -94,6 +94,14 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden items-center gap-4 lg:flex">
+            <Link
+              to="/#cmmc-certification"
+              className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
+              aria-label="CMMC Level 2 Self-Certified"
+            >
+              <ShieldCheck className="h-3.5 w-3.5" />
+              CMMC L2
+            </Link>
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={goToContact}
@@ -152,6 +160,15 @@ const Header = () => {
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 Case Studies
+              </Link>
+              <Link
+                to="/#cmmc-certification"
+                onClick={() => setIsMenuOpen(false)}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+                aria-label="CMMC Level 2 Self-Certified"
+              >
+                <ShieldCheck className="h-4 w-4" />
+                CMMC L2 Self-Certified
               </Link>
               <div className="mt-4 flex flex-col gap-3">
                 <Button 

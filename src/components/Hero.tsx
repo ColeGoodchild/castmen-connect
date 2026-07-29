@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Shield, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ManufacturingAnimation from "@/components/ManufacturingAnimation";
@@ -37,6 +37,13 @@ const Hero = () => {
                 <Shield className="h-4 w-4" />
                 JCP Certified
               </Link>
+              <Link
+                to="/#cmmc-certification"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+              >
+                <ShieldCheck className="h-4 w-4" />
+                CMMC L2 Self-Certified
+              </Link>
             </div>
 
             {/* Headline */}
@@ -47,9 +54,9 @@ const Hero = () => {
 
             {/* Subheadline */}
             <p className="animate-fade-up-delay-2 mb-8 max-w-xl text-lg text-muted-foreground">
-              <Link to="/as9100-wire-harness-manufacturer" className="text-primary underline-offset-4 hover:underline">AS9100D-certified</Link>{" "}
-              and{" "}
-              <Link to="/#jcp-certification" className="text-primary underline-offset-4 hover:underline">JCP-certified</Link>{" "}
+              <Link to="/as9100-wire-harness-manufacturer" className="text-primary underline-offset-4 hover:underline">AS9100D-certified</Link>,{" "}
+              <Link to="/#jcp-certification" className="text-primary underline-offset-4 hover:underline">JCP-certified</Link>, and{" "}
+              <Link to="/#cmmc-certification" className="text-primary underline-offset-4 hover:underline">CMMC L2 self-certified</Link>{" "}
               U.S. wire harness and cable assembly manufacturer — trusted with export-controlled defense technical data and specializing in{" "}
               <Link to="/rapid-prototype-cable-assembly" className="text-primary underline-offset-4 hover:underline">rapid-turn</Link>,
               high-reliability assemblies for aerospace, defense, robotics, and advanced systems.
@@ -92,7 +99,7 @@ const Hero = () => {
             </ul>
 
             {/* Trust Indicators */}
-            <div className="mt-10 grid grid-cols-2 gap-6 border-t border-border/50 pt-8 sm:grid-cols-4">
+            <div className="mt-10 grid grid-cols-2 gap-6 border-t border-border/50 pt-8 sm:grid-cols-3 lg:grid-cols-5">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary lg:text-3xl">&lt;0.5%</div>
                 <div className="mt-1 text-xs text-muted-foreground sm:text-sm">RMA Rate</div>
@@ -108,6 +115,10 @@ const Hero = () => {
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary lg:text-3xl">ITAR</div>
                 <div className="mt-1 text-xs text-muted-foreground sm:text-sm">Compliant</div>
+              </div>
+              <div className="text-center sm:col-span-3 lg:col-span-1">
+                <div className="text-2xl font-bold text-primary lg:text-3xl">CMMC L2</div>
+                <div className="mt-1 text-xs text-muted-foreground sm:text-sm">Self-Certified</div>
               </div>
             </div>
           </div>
