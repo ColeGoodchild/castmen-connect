@@ -161,6 +161,15 @@ const Header = () => {
               >
                 Case Studies
               </Link>
+              <Link
+                to="/#cmmc-certification"
+                onClick={() => setIsMenuOpen(false)}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+                aria-label="CMMC Level 2 Self-Certified"
+              >
+                <ShieldCheck className="h-4 w-4" />
+                CMMC L2 Self-Certified
+              </Link>
               <div className="mt-4 flex flex-col gap-3">
                 <Button 
                   className="w-full bg-primary text-primary-foreground"
