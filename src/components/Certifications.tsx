@@ -29,6 +29,12 @@ const certifications: {
     type: "Defense Access",
   },
   {
+    icon: Lock,
+    name: "CMMC L2 Self-Certified",
+    description: "Cybersecurity Maturity Model Certification Level 2 — assessed for defense supply-chain cybersecurity protection",
+    type: "Cybersecurity",
+  },
+  {
     icon: FileCheck,
     name: "IPC/WHMA-A-620",
     description: "Cable & wire harness assembly workmanship standard",
@@ -81,7 +87,7 @@ const Certifications = () => {
                 <span className="block text-gradient">Excellence</span>
               </h2>
               <p className="text-muted-foreground">
-                As a JCP-certified wire harness and cable assembly manufacturer, our credentials reflect our commitment
+                As a JCP-certified and CMMC L2 self-certified wire harness and cable assembly manufacturer, our credentials reflect our commitment
                 to the highest standards in quality, safety, environmental responsibility, and defense supply-chain compliance.
               </p>
             </div>
@@ -274,6 +280,71 @@ const Certifications = () => {
               <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/20 p-3 text-xs text-muted-foreground">
                 <Globe2 className="h-4 w-4 flex-shrink-0 text-primary" />
                 Castmen Electronics · Seneca Falls, NY · U.S.-based defense supplier
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Dedicated CMMC Section */}
+        <div id="cmmc-certification" className="relative mt-12 scroll-mt-24 overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/10 via-card/60 to-card/40 p-8 backdrop-blur-sm lg:p-12">
+          <div className="grid gap-10 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-4 py-2 text-sm font-medium text-primary">
+                <Lock className="h-4 w-4" />
+                Cybersecurity Maturity Model Certification
+              </div>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                CMMC Level 2 Self-Certified
+              </h2>
+              <p className="mb-6 text-lg text-muted-foreground">
+                Castmen Electronics is a <strong className="text-foreground">CMMC L2 self-certified manufacturer</strong>, demonstrating that our systems, processes, and controls meet the cybersecurity maturity practices required to protect controlled unclassified information (CUI) in the defense supply chain.
+              </p>
+
+              <h3 className="mb-2 text-xl font-semibold text-foreground">What CMMC Level 2 means</h3>
+              <p className="mb-6 text-muted-foreground">
+                The Cybersecurity Maturity Model Certification (CMMC) Level 2 aligns with NIST SP 800-171 and is designed for organizations that handle CUI as part of Department of Defense contracts. Self-certification confirms we have implemented and maintain the required security controls, access management, incident response, and risk-management practices.
+              </p>
+
+              <h3 className="mb-2 text-xl font-semibold text-foreground">Why it matters to our customers</h3>
+              <ul className="mb-6 space-y-2 text-muted-foreground">
+                <li className="flex gap-2">
+                  <ShieldCheck className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                  Demonstrates readiness for DoD contracts and defense prime supply-chain requirements.
+                </li>
+                <li className="flex gap-2">
+                  <ShieldCheck className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                  Protects technical data, drawings, and program information shared during manufacturing.
+                </li>
+                <li className="flex gap-2">
+                  <ShieldCheck className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                  Complements our ITAR registration, JCP certification, and AS9100D quality system as a complete compliance foundation.
+                </li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div
+                role="img"
+                aria-label="CMMC Level 2 Self-Certified badge for Castmen Electronics"
+                className="flex flex-col items-center justify-center rounded-2xl border-2 border-primary/50 bg-card/70 p-8 text-center shadow-lg"
+              >
+                <div className="mb-4 rounded-full border-2 border-primary/60 bg-primary/15 p-5 text-primary">
+                  <Lock className="h-12 w-12" />
+                </div>
+                <div className="text-xs font-medium uppercase tracking-widest text-primary">
+                  DoD Supply Chain
+                </div>
+                <div className="mt-1 text-2xl font-bold text-foreground">CMMC L2</div>
+                <div className="mt-2 text-sm text-muted-foreground">
+                  Self-Certified
+                </div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  NIST SP 800-171 aligned
+                </div>
+              </div>
+              <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/20 p-3 text-xs text-muted-foreground">
+                <Globe2 className="h-4 w-4 flex-shrink-0 text-primary" />
+                Castmen Electronics · Seneca Falls, NY · Defense-ready supplier
               </div>
             </div>
           </div>
