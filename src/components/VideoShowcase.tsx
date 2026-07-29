@@ -129,7 +129,7 @@ const VideoShowcase = () => {
             <span className="block text-gradient">Powered by Advanced Automation</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            At Castmen Corporation, we continuously invest in advanced
+            At Castmen Electronics, we continuously invest in advanced
             manufacturing technology to improve quality, repeatability, and
             production efficiency. Our automated equipment supports precision
             wire processing, cable assembly, and mission-critical manufacturing
