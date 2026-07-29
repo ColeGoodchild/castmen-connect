@@ -199,7 +199,7 @@ const VideoShowcase = () => {
                 {/* Status indicator */}
                 <div className="pointer-events-none absolute right-4 top-4 z-10 flex items-center gap-2 rounded-full border border-primary/40 bg-background/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-primary backdrop-blur-md">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                  AS9100D
+                  AS9100D · CMMC L2
                 </div>
 
                 {/* Hover hotspots */}
