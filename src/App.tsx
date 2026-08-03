@@ -11,6 +11,8 @@ import As9100WireHarness from "./pages/As9100WireHarness";
 import RapidPrototypeCableAssembly from "./pages/RapidPrototypeCableAssembly";
 import RfCableManufacturingTesting from "./pages/RfCableManufacturingTesting";
 import CaseStudies from "./pages/CaseStudies";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/rapid-prototype-cable-assembly" element={<RapidPrototypeCableAssembly />} />
           <Route path="/rf-cable-manufacturing-testing" element={<RfCableManufacturingTesting />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
