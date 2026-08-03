@@ -90,6 +90,12 @@ const Header = () => {
             >
               Case Studies
             </Link>
+            <Link
+              to="/blog"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              Knowledge Center
+            </Link>
           </nav>
 
           {/* CTA Buttons */}
@@ -160,6 +166,13 @@ const Header = () => {
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 Case Studies
+              </Link>
+              <Link
+                to="/blog"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                Knowledge Center
               </Link>
               <Link
                 to="/#cmmc-certification"
