@@ -172,6 +172,15 @@ const Footer = () => {
                   Case Studies
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/blog"
+                  onClick={scrollToTop}
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Engineering Knowledge Center
+                </Link>
+              </li>
             </ul>
           </div>
 
